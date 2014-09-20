@@ -365,6 +365,41 @@ Severity: S - slight (0% - 25%), M - moderate (26% - 75%), H - high (76% - 100%)
 <label>Other true flies (Diptera)
 [text other_true_flies 15/]</label>
 
+<h4>Stream Quality Score</h4>
+<h5>Group 1</h5>
+[text* group_1_qa_score 15/]
+
+<h4>Stream Quality Score</h4>
+<h5>Group 1</h5>
+<label>[text* group_1_R_score_input 15/] # of R's x 5.0 = [text* group_1_R_score_result 15/]</label>
+<label>[text* group_1_C_score_input 15/] # of C's x 5.0 = [text* group_1_C_score_result 15/]</label>
+<label><strong>Group 1 Total =</strong> [text* group_1_total 15/]</label>
+
+<h5>Group 2</h5>
+<label>[text* group_2_R_score_input 15/] # of R's x 5.0 = [text* group_2_R_score_result 15/]</label>
+<label>[text* group_2_C_score_input 15/] # of C's x 5.0 = [text* group_2_C_score_result 15/]</label>
+<label><strong>Group 2 Total =</strong> [text* group_2_total 15/]</label>
+
+<h5>Group 3</h5>
+<label>[text* group_3_R_score_input 15/] # of R's x 5.0 = [text* group_3_R_score_result 15/]</label>
+<label>[text* group_3_C_score_input 15/] # of C's x 5.0 = [text* group_3_C_score_result 15/]</label>
+<label><strong>Group 3 Total =</strong> [text* group_3_total 15/]</label>
+
+<label>Identifications made by:</label>
+[text* ids_made_by 50/]
+
+<label>Rate your confidence in these identifications (5 being most confident):</label>
+[radio confidence_in_score "5" "4" "3" "2" "1"]
+
+<label>Data sheet check for completeness by:</label>
+[text* completeness_check 50/]
+
+<label>Data entered into MiCorps database by:</label>
+[text* micorps_database_entry 50/]
+
+<label>Date entered:</label>
+[date entry_date]
+
 <label>Total Stream Quality Score</label>
 [text* stream_quality_score]
 
