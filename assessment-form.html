@@ -1,6 +1,6 @@
 <h2>I. Stream, Team, Location Information</h2>
 
-<label>Location name:</label>
+<label>Site name:</label>
 [select* site_name include_blank "Flint River South" "Plum Creek" "Hasler Creek" "Flint River, Northbranch" "Pine Run Creek" "Misteguay Creek" "Flint River Flushing" "Swartz Creek" "Gilkey Creek" "Thread Creek" "Kearsley Creek" "Butternut Creek" "Farmers Creek" "Squaw Creek" "Brent Run Creek" "Flint River Richfield" "Silver Creek" "Indian Creek" "Hunters Creek" "Misteguay Creek Headwaters" "Brent Run Headwaters" "Swartz Creek Headwaters" "Thread Creek Headwaters" "Kearsley Creek Headwaters" "Gilkey Creek Headwaters" "Butternut Creek Headwaters" "Hasler Creek Headwaters" "Springbank Creek" "Evergreen Creek" "Pine Run Headwaters" "Shiawasee River Argentine" "Shiawasee River Linden"]
 
 <label>Collection Start Time:</label>
@@ -33,7 +33,7 @@
 
 <h3>Macroinvertebrae Collection:</h3><label>Check the habitats that were sampled. make sure you are sampling <em>all</em> habitats present (within a 300 foot sampling reach as described in your site directions).
 
-[checkbox checkbox-677 id:macroinvertebrae-collection use_label_element "Riffles" "Overhanging Vegetation" "Rooted Aquatic Plants" "Runs" "Undercut banks" "Large Rocks" "Leaf Packs" "Pools" "Eddies"]
+[checkbox checkbox-677 id:macroinvertebrae-collection use_label_element "Riffles" "Overhanging Vegetation" "Rooted Aquatic Plants" "Runs" "Undercut banks" "Large Rocks" "Leaf Packs" "Pools" "Eddies" "Submerged Wood/Woody debris" "Other"][text* other_macroinvertebrae_collection 50/]
 
 <label>Did you see any:</label>
 [radio radio-776 id:live-crayfish use_label_element "Live Crayfish" "Live Clams"]
@@ -249,34 +249,70 @@
 
 Severity: S - slight (0% - 25%), M - moderate (26% - 75%), H - high (76% - 100%)
 
-<label>Crop Related Sources[radio crop-related-sources id:crop-related-sources use_label_element "S" "M" "H"]</label>
-<label>Grazing Related SourcesIntensive Animal Feeding Operations[radio  id: use_label_element "S" "M" "H"]</label>
-<label>Highway / Road / Bridge Maintenance and Runoff[radio  id: use_label_element "S" "M" "H"]</label>
-<label>Channelization[radio  id: use_label_element "S" "M" "H"]</label>
-<label>Dredging[radio  id: use_label_element "S" "M" "H"]</label>
-<label>Removal of Riparian VegetationBank and Shoreline Erosion / Modification / Destruction[radio  id: use_label_element "S" "M" "H"]</label>
-<label>Flow Regulation / Modification (Hydrology)[radio  id: use_label_element "S" "M" "H"]</label>
-<label>Land Fill[radio  id: use_label_element "S" "M" "H"]</label>
-<label>Urban Runoff[radio  id: use_label_element "S" "M" "H"]</label>
-<label>Impoundment - Dam (natural or man-mad)[radio  id: use_label_element "S" "M" "H"]</label>
-<label>Construction: Highway, Road, Bridge, Culvert[radio  id: use_label_element "S" "M" "H"]</label>
-<label>Construction: Land Development[radio  id: use_label_element "S" "M" "H"]</label>
-<label>Natural Sources (i.e. log jams)[radio  id: use_label_element "S" "M" "H"]</label>
-<label>Signs of animals using or crossing the stream[radio  id: use_label_element "S" "M" "H"]</label>
-<label>On-site Wastewater Systems[radio  id: use_label_element "S" "M" "H"]</label>
-<label>Silviculture (Forestry)[radio  id: use_label_element "S" "M" "H"]</label>
-<label>Resource Extraction (Mining)[radio  id: use_label_element "S" "M" "H"]</label>
-<label>Recreational / Tourism Activities (general)[radio  id: use_label_element "S" "M" "H"]</label>
-<label> - Golf Courses[radio  id: use_label_element "S" "M" "H"]</label>
-<label> - Recreational Boating (water releases)[radio  id: use_label_element "S" "M" "H"]</label>
-<label> - Recreational Boating (bank or shoreline erosion)[radio recreational-boating-bank-erosion id:recreational-boating-bank-erosion use_label_element "S" "M" "H"]</label>
-<label>Debris in Water[radio debris-in-water id:debris-in-water use_label_element "S" "M" "H"]</label>
-<label>Debris in Trees (natural sources)[radio debris-in-trees-natural-sources id:debris-in-trees-natural-sources use_label_element "S" "M" "H"]</label>
-<label>Trash in trees along bank[radio trash-in-trees-along-bank id:trash-in-trees-along-bank use_label_element "S" "M" "H"]</label>
-<label>Industrial Point Sources[radio industrial-point-sources id:industrial-point-sources use_label_element "S" "M" "H"]</label>
-<label>Municipal Point Sources[radio municipal-point-sources id:municipal-point-sources use_label_element "S" "M" "H"]</label>
-<label>Source(s) Unknown[radio source-unknown id:source-unknown use_label_element "S" "M" "H"]</label>
+<label>Crop Related Sources[radio crop-related-sources use_label_element "S" "M" "H"]</label>
 
+<label>Grazing Related Sources<label>
+[radio grazing_sources use_label_element "S" "M" "H"]
+
+<label>Intensive Animal Feeding Operations</label>
+[radio animal_feeding_operations use_label_element "S" "M" "H"]
+
+<label>Highway / Road / Bridge Maintenance and Runoff[radio road_maitenance_runoff use_label_element "S" "M" "H"]</label>
+
+<label>Channelization[radio  channelization use_label_element "S" "M" "H"]</label>
+
+<label>Dredging[radio dredging use_label_element "S" "M" "H"]</label>
+
+<label>Removal of Riparian Vegetation [radio veg_removal "S" "M" "H"]</label>
+
+<label>Bank and Shoreline Erosion / Modification / Destruction[radio bank_shoreline_erosion use_label_element "S" "M" "H"]</label>
+
+<label>Flow Regulation / Modification (Hydrology)[radio flow_regulation use_label_element "S" "M" "H"]</label>
+
+<label>Land Fill[radio land_fill use_label_element "S" "M" "H"]</label>
+
+<label>Urban Runoff[radio urban_runoff use_label_element "S" "M" "H"]</label>
+
+<label>Impoundment - Dam (natural or man-mad)[radio impound_dam use_label_element "S" "M" "H"]</label>
+
+<label>Construction: Highway, Road, Bridge, Culvert[radio construction_roadwork use_label_element "S" "M" "H"]</label>
+
+<label>Construction: Land Development[radio construction_land_dev use_label_element "S" "M" "H"]</label>
+
+<label>Natural Sources (i.e. log jams)[radio natural_sources use_label_element "S" "M" "H"]</label>
+
+<label>Signs of animals using or crossing the stream[radio animal_use_signs use_label_element "S" "M" "H"]</label>
+
+<label>On-site Wastewater Systems[radio wastewater use_label_element "S" "M" "H"]</label>
+
+<label>Silviculture (Forestry)[radio silviculture use_label_element "S" "M" "H"]</label>
+
+<label>Resource Extraction (Mining)[radio resource_extraction use_label_element "S" "M" "H"]</label>
+
+<label>Recreational / Tourism Activities (general)[radio tourism_activities use_label_element "S" "M" "H"]</label>
+
+<label> - Golf Courses[radio golf_courses use_label_element "S" "M" "H"]</label>
+
+<label> - Recreational Boating (water releases)[radio boating_water_releases use_label_element "S" "M" "H"]</label>
+
+<label> - Recreational Boating (bank or shoreline erosion)[radio recreational-boating-bank-erosion use_label_element "S" "M" "H"]</label>
+
+<label>Debris in Water[radio debris-in-water use_label_element "S" "M" "H"]</label>
+
+<label>Debris in Trees (natural sources)[radio debris-in-trees-natural-sources use_label_element "S" "M" "H"]</label>
+
+<label>Trash in trees along bank [radio trash-in-trees-along-bank use_label_element "S" "M" "H"]</label>
+
+<label>Industrial Point Source[radio industrial-point-sources use_label_element "S" "M" "H"]</label>
+
+<label>Municipal Point Source[radio municipal-point-sources use_label_element "S" "M" "H"]</label>
+
+<label>Source(s) Unknown[radio source-unknown use_label_element "S" "M" "H"]</label>
+
+<label>Does a team need to come out and collect trash? [radio trash_collection use_label_element "Yes" "No"]
+
+<label>Additional Comments</label>
+[textarea* add_degradation_comments 15x5]
 
 <h3>Identification and Assesment</h3>
 <p>Please use the letter codes "R" (rare) for 1 to 10 and "C" (common) for 11 or more.</p>
@@ -294,7 +330,7 @@ Severity: S - slight (0% - 25%), M - moderate (26% - 75%), H - high (76% - 100%)
 <label>Gilled (right-handed) snails (Gastropoda)
 [text gilled-snails 15/ id:gilled-snails]</label>
 
-<label>Stonefly nymphs (Megaloptera)
+<label>Stonefly nymphs (Plecoptera)
 [text stonefly 15/ id:stonefly]</label>
 
 <label>Water Penny (Coleoptera)
@@ -369,18 +405,24 @@ Severity: S - slight (0% - 25%), M - moderate (26% - 75%), H - high (76% - 100%)
 <h4>Stream Quality Score</h4>
 <h5>Group 1</h5>
 <label>[text* group_1_R_score_input 15/] # of R's x 5.0 = [text* group_1_R_score_result 15/]</label>
-<label>[text* group_1_C_score_input 15/] # of C's x 5.0 = [text* group_1_C_score_result 15/]</label>
+<label>[text* group_1_C_score_input 15/] # of C's x 5.3 = [text* group_1_C_score_result 15/]</label>
 <label><strong>Group 1 Total =</strong> [text* group_1_total 15/]</label>
 
 <h5>Group 2</h5>
-<label>[text* group_2_R_score_input 15/] # of R's x 5.0 = [text* group_2_R_score_result 15/]</label>
-<label>[text* group_2_C_score_input 15/] # of C's x 5.0 = [text* group_2_C_score_result 15/]</label>
+<label>[text* group_2_R_score_input 15/] # of R's x 3.0 = [text* group_2_R_score_result 15/]</label>
+<label>[text* group_2_C_score_input 15/] # of C's x 3.2 = [text* group_2_C_score_result 15/]</label>
 <label><strong>Group 2 Total =</strong> [text* group_2_total 15/]</label>
 
 <h5>Group 3</h5>
-<label>[text* group_3_R_score_input 15/] # of R's x 5.0 = [text* group_3_R_score_result 15/]</label>
-<label>[text* group_3_C_score_input 15/] # of C's x 5.0 = [text* group_3_C_score_result 15/]</label>
+<label>[text* group_3_R_score_input 15/] # of R's x 1.1 = [text* group_3_R_score_result 15/]</label>
+<label>[text* group_3_C_score_input 15/] # of C's x 1.0 = [text* group_3_C_score_result 15/]</label>
 <label><strong>Group 3 Total =</strong> [text* group_3_total 15/]</label>
+
+<label>Total Stream Quality Score</label>
+[text* stream_quality_score]
+
+<label>Total Stream Quality Grade</label>
+[select stream_quality_grade "Poor (< 19)" "Fair (19 - 33)" "Good (34 - 48)" "Excellent (> 48)"]
 
 <label>Identifications made by:</label>
 [text* ids_made_by 50/]
@@ -396,11 +438,5 @@ Severity: S - slight (0% - 25%), M - moderate (26% - 75%), H - high (76% - 100%)
 
 <label>Date entered:</label>
 [date entry_date]
-
-<label>Total Stream Quality Score</label>
-[text* stream_quality_score]
-
-<label>Total Stream Quality Grade</label>
-[select stream_quality_grade "Poor (< 19)" "Fair (19 - 33)" "Good (34 - 48)" "Excellent (> 48)"]
 
 <p>[submit "Save assessment"]</p>
