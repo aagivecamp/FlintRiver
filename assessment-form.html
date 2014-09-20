@@ -1,4 +1,4 @@
-<h2>Stream, Team, Location Information</h2>
+<h2>I. Stream, Team, Location Information</h2>
 
 <label>Location name:</label>
 [select* site_name include_blank "Flint River South" "Plum Creek" "Hasler Creek" "Flint River, Northbranch" "Pine Run Creek" "Misteguay Creek" "Flint River Flushing" "Swartz Creek" "Gilkey Creek" "Thread Creek" "Kearsley Creek" "Butternut Creek" "Farmers Creek" "Squaw Creek" "Brent Run Creek" "Flint River Richfield" "Silver Creek" "Indian Creek" "Hunters Creek" "Misteguay Creek Headwaters" "Brent Run Headwaters" "Swartz Creek Headwaters" "Thread Creek Headwaters" "Kearsley Creek Headwaters" "Gilkey Creek Headwaters" "Butternut Creek Headwaters" "Hasler Creek Headwaters" "Springbank Creek" "Evergreen Creek" "Pine Run Headwaters" "Shiawasee River Argentine" "Shiawasee River Linden"]
@@ -50,6 +50,8 @@
 <p><strong>Comments</strong>: Were other wildlife present, including fish? If yes, please list what was seen and how many.</p>
 [textarea textarea-851 15x5 id:other-wildlife placeholder "Raccoons, catfish, friendly dogs, etc.,"]
 
+<h3>II. Flow Measurement</h3>
+
 <label>Average Width (in feet)</label>
 [number* number-45 id:avg-width]
 
@@ -59,9 +61,9 @@
 <label>Average Flow (in seconds)</label>
 [number* number-795 id:avg-flow min:0]
 
-<h3>Bank Conditions</h3>
+<h3>III. Bank Conditions</h3>
 
-<h4>Bank Angles</h4>
+<h4>A. Bank Angles</h4>
 
 <h5>Undercut (Acute) %</h5>
 <label>Left Bank</label>[number* left-undercut-bank-angle id:left-undercut-bank-angles min:0 max:100]
@@ -78,14 +80,14 @@
 
 <label>Right Bank</label>[number* right-right-bank-angle id:right-right-bank-angles min:0 max:100]
 
-<h4>Bank Stability and Erosion</h4>
+<h4>B. Bank Stability and Erosion</h4>
 <label>Left Bank</label>
 [radio stability-erosion-left id:stability-erosion-left use_label_element "10" "9" "8" "7" "6" "5" "4" "3" "2" "1"]
 
 <label>Right Bank</label>
 [radio stability-erosion-right id:stability-erosion-right use_label_element "10" "9" "8" "7" "6" "5" "4" "3" "2" "1"]
 
-<h4>Riparian Zone</h4>
+<h4>C. Riparian Zone</h4>
 <p><label>Left bank</label>Select all that apply:</p>
 [checkbox land-types-left id:land-types-left use_label_element "Wetlands" "Forest" "Residential Lawn" "Park" "Shrub, Old Field" "Agriculture" "Construction" "Commercial" "Industrial" "Road" "Golf Course" "Highways" "Other"][text land-types-left-other 15/5 id:land-types-left-other]
 
@@ -98,8 +100,8 @@
 <label>Right Bank</label>
 [radio land-types-right-scale id:land-types-right-scale use_label_element "10" "9" "8" "7" "6" "5" "4" "3" "2" "1"]
 
-<h4>Stream and Riparian Habitat</h4>
-<h5>General Information (select all that apply)</h5>
+<h4>IV. Stream and Riparian Habitat</h4>
+<h5>A. General Information (select all that apply)</h5>
 
 <label>Monitoring Even Conditions</label>
 [checkbox event-conditions id:event-conditions use_label_element "Rain" "Sunny" "Windy" "Other"][text event-conditions-other 15/5 id:event-conditions-other]
@@ -149,7 +151,7 @@
 <label><strong>If yes</strong>, approximate the number of inches</label>
 [number* rain-inches id:rain-inches min:0]
 
-<h4>Plant Community</h4>
+<h4>B. Plant Community</h4>
 
 <label>Estimate the percentage of stream covered by overhanging vegetation (near the water).</label>
 [text* overhanging-vegetation-stream-coverage 15/ id:overhanging-vegetation-stream-coverage]
@@ -187,7 +189,7 @@
 <label>Other</label>
 [select* other-plants-on-bank-abundance include_blank "Absent" "Rare" "Common" "Abundant" "Dominant"]
 
-<h4>Streambed Substrate</h4>
+<h4>C. Streambed Substrate</h4>
 
 <table>
 <tr>
@@ -246,7 +248,7 @@
 </tr>
 </table>
 
-
+<h3>V. Sources of Degradation</h3>
 
 <h3>Identification and Assesment</h3>
 <p>Please use the letter codes "R" (rare) for 1 to 10 and "C" (common) for 11 or more.</p>
