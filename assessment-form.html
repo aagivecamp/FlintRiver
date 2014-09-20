@@ -1,0 +1,341 @@
+<h2>Stream, Team, Location Information</h2>
+
+<label>Location name:</label>
+[select* site_name include_blank "Flint River South" "Plum Creek" "Hasler Creek" "Flint River, Northbranch" "Pine Run Creek" "Misteguay Creek" "Flint River Flushing" "Swartz Creek" "Gilkey Creek" "Thread Creek" "Kearsley Creek" "Butternut Creek" "Farmers Creek" "Squaw Creek" "Brent Run Creek" "Flint River Richfield" "Silver Creek" "Indian Creek" "Hunters Creek" "Misteguay Creek Headwaters" "Brent Run Headwaters" "Swartz Creek Headwaters" "Thread Creek Headwaters" "Kearsley Creek Headwaters" "Gilkey Creek Headwaters" "Butternut Creek Headwaters" "Hasler Creek Headwaters" "Springbank Creek" "Evergreen Creek" "Pine Run Headwaters" "Shiawasee River Argentine" "Shiawasee River Linden"]
+
+<label>Collection Start Time:</label>
+[text* text-403 5/4 id:start-time placeholder "8:20"][radio radio-49 "AM" "PM"]
+
+<label>Collection End Time</label>
+[text* text-699 5/4 id:end-time placeholder "9:35"][radio radio-46 "AM" "PM"]
+
+<label>Date</label>
+[date* assessment_date]
+
+<label>Site ID</label>
+[select* menu-279 id:site-id "Please Choose One" "1. Flint River South" "2. Plum Creek" "3. Hasler Creek" "4. Flint River, Northbranch" "5. Pine Run Creek" "6. Misteguay Creek" "7. Flint River Flushing" "8. Swartz Creek" "9. Gilkey Creek" "10. Thread Creek" "11. Kearsley Creek" "12. Butternut Creek" "13. Farmers Creek" "14. Squaw Creek" "15. Brent Run Creek" "16. Flint River Richfield" "17. Silver Creek" "18. Indian Creek" "19. Hunters Creek" "20. Misteguay Creek Headwaters" "21. Brent Run Headwaters" "22. Swartz Creek Headwaters" "23. Thread Creek Headwaters" "24. Kearsley Creek Headwaters" "25. Gilkey Creek Headwaters" "26. Butternut Creek Headwaters" "27. Hasler Creek Headwaters" "28. Springbank Creek" "29. Evergreen Creek" "30. Pine Run Headwaters" "31. Shiawasee River Argentine" "32. Shiawasee River Linden"]
+
+<label>HUC Code (if known)</label>
+[select menu-656 id:huc-code "Please Choose One" "HUC-2 (Region)" "HUC-4 (Sub-region)" "HUC-6 (Basin)" "HUC-8 (Sub-basin)" "HUC-10 (Watershed)" "HUC-12 (Sub-watershed)"]
+
+<label>Latitude</label>
+[number number-125 id:latitude min:42 max:44 placeholder "Degrees"][number number-582 id:latitude-minutes placeholder "Minutes"][number number-770 id:latitude-seconds placeholder "Seconds"]
+
+<label>Longitude</label>
+[number number-125 id:longitude min:-82 max:-84][number number-582 id:longitude-minutes][number number-770 id:longitude-seconds]
+
+<h3>Monitoring Team</h3>
+<label>Name(s) of person(s) completing datasheet:</label>
+[textarea textarea-650 15x5 id:persons-involved placeholder "Please separate names with commas."]
+
+<label>Name(s) of person(s) collecting:</label>
+[textarea textarea-41 15x5 id:persons-collecting placeholder "Please separate names with commas."]
+
+<label>Other team members:</label>
+[textarea textarea-31 15x5 id:other-tms placeholder "Please separate names with commas."]
+
+<h3>Macroinvertebrae Collection:</h3><label>Check the habitats that were sampled. make sure you are sampling <em>all</em> habitats present (within a 300 foot sampling reach as described in your site directions).
+
+[checkbox checkbox-677 id:macroinvertebrae-collection use_label_element "Riffles" "Overhanging Vegetation" "Rooted Aquatic Plants" "Runs" "Undercut banks" "Large Rocks" "Leaf Packs" "Pools" "Eddies"]
+
+<label>Did you see any:</label>
+[radio radio-776 id:live-crayfish use_label_element "Live Crayfish" "Live Clams"]
+
+<label>If yes, how many live crayfish?</label>
+[number number-564 id:live-crayfish-number min:0 step:1]
+
+<label>If yes, how many live clams?</label>
+[number number-661 id:live-clam-number min:0 step:1]
+
+<p><strong>Comments</strong>: Were other wildlife present, including fish? If yes, please list what was seen and how many.</p>
+[textarea textarea-851 15x5 id:other-wildlife placeholder "Raccoons, catfish, friendly dogs, etc.,"]
+
+<label>Average Width (in feet)</label>
+[number* number-45 id:avg-width]
+
+<label>Average Depth (in feet)</label>
+[number* number-141 id:avg-depth]
+
+<label>Average Flow (in seconds)</label>
+[number* number-795 id:avg-flow min:0]
+
+<h3>Bank Conditions</h3>
+
+<h4>Bank Angles</h4>
+
+<h5>Undercut (Acute) %</h5>
+<label>Left Bank</label>[number* left-undercut-bank-angle id:left-undercut-bank-angles min:0 max:100]
+
+<label>Right Bank</label>[number* right-undercut-bank-angle id:right-undercut-bank-angles min:0 max:100]
+
+<h5>Obtuse %</h5>
+<label>Left Bank</label>[number* left-obtuse-bank-angle id:left-obtuse-bank-angles min:0 max:100]
+
+<label>Right Bank</label>[number* right-obtuse-bank-angle id:right-obtuse-bank-angles min:0 max:100]
+
+<h5>Right %</h5>
+<label>Left Bank</label>[number* left-right-bank-angle id:left-right-bank-angles min:0 max:100]
+
+<label>Right Bank</label>[number* right-right-bank-angle id:right-right-bank-angles min:0 max:100]
+
+<h4>Bank Stability and Erosion</h4>
+<label>Left Bank</label>
+[radio stability-erosion-left id:stability-erosion-left use_label_element "10" "9" "8" "7" "6" "5" "4" "3" "2" "1"]
+
+<label>Right Bank</label>
+[radio stability-erosion-right id:stability-erosion-right use_label_element "10" "9" "8" "7" "6" "5" "4" "3" "2" "1"]
+
+<h4>Riparian Zone</h4>
+<p><label>Left bank</label>Select all that apply:</p>
+[checkbox land-types-left id:land-types-left use_label_element "Wetlands" "Forest" "Residential Lawn" "Park" "Shrub, Old Field" "Agriculture" "Construction" "Commercial" "Industrial" "Road" "Golf Course" "Highways" "Other"][text land-types-left-other 15/5 id:land-types-left-other]
+
+<p><label>Right bank</label>Select all that apply:</p>
+[checkbox land-types-right id:land-types-right use_label_element "Wetlands" "Forest" "Residential Lawn" "Park" "Shrub, Old Field" "Agriculture" "Construction" "Commercial" "Industrial" "Road" "Golf Course" "Highways" "Other"][text land-types-left-other 15/5 id:land-types-left-other]
+
+<label>Left Bank</label>
+[radio land-types-left-scale id:land-types-left-scale use_label_element "10" "9" "8" "7" "6" "5" "4" "3" "2" "1"]
+
+<label>Right Bank</label>
+[radio land-types-right-scale id:land-types-right-scale use_label_element "10" "9" "8" "7" "6" "5" "4" "3" "2" "1"]
+
+<h4>Stream and Riparian Habitat</h4>
+<h5>General Information (select all that apply)</h5>
+
+<label>Monitoring Even Conditions</label>
+[checkbox event-conditions id:event-conditions use_label_element "Rain" "Sunny" "Windy" "Other"][text event-conditions-other 15/5 id:event-conditions-other]
+
+<label>Water Temperature (Celsius)</label>
+[text* water-temp 15/ id:water-temp]
+
+<label>Air Temperature (Celsius)</label>
+[text* air-temp 15/ id:air-temp]
+
+<label>Channel Condition<label>
+[checkbox channel-conditions id:channel-conditions use_label_element "Natural" "Recovering" "Maintained"]
+
+<label>Has this stream been channelized?<label>
+[checkbox channelized id:channelized use_label_element "Yes, currently" "Yes, sometime in the past" "No"]
+
+<label>Estimate of current stream flow<label>
+[checkbox stream-flow id:stream-flow use_label_element "Dry" "Stagnant" "Low" "Medium" "High"]
+
+<label>Estimate of current stream flow<label>
+[checkbox stream-flow id:stream-flow use_label_element "Dry" "Stagnant" "Low" "Medium" "High"]
+
+<label>Highest Water Mark (in feet; above current level)<label>
+[checkbox highest-water-mark id:highest-water-mark use_label_element "<1" "1-3" "3-5" "5-10" ">10"]
+
+<label>Estimate of turbidity<label>
+[checkbox turbidity id:turbidity use_label_element "Clear" "Slightly Turbid" "Turbid"]
+
+<label>Is there a sheen or oil slick visible on the surface?<label>
+[radio oil-slick id:oil-slick use_label_element "Yes" "No"]
+
+<label><strong>If yes</strong>, does the sheen break up when poked with a stick?<label>
+[radio oil-slick-if-yes id:oil-slick-if-yes use_label_element "Yes (most likely natural)" "No (most likely artificial)"]
+
+<label>Is there foam present on the surface of the water?<label>
+[radio foam id:foam use_label_element "Yes" "No"]
+
+<label><strong>If yes</strong>, does the foam feel gritty or slippery?<label>
+[radio foam-if-yes id:foam-if-yes use_label_element "Gritty (most likely natural)" "Slippery (most likely artificial)"]
+
+<label>If the water <strong>smells</strong>, please describe:</label>
+[text* water-smell 40/ id:water-smell]
+
+<label>Has it rained in the past five (5) days?</label>
+[radio rained-yes-no id:rained-yes-no use_label_element "Yes" "No"]
+
+<label><strong>If yes</strong>, approximate the number of inches</label>
+[number* rain-inches id:rain-inches min:0]
+
+<h4>Plant Community</h4>
+
+<label>Estimate the percentage of stream covered by overhanging vegetation (near the water).</label>
+[text* overhanging-vegetation-stream-coverage 15/ id:overhanging-vegetation-stream-coverage]
+
+<label>Estimate the percentage of stream covered by overhanging tree canopy.</label>
+[text* overhanging-tree-canopy-stream-coverage 15/ id:overhanging-tree-canopy-stream-coverage]
+
+<h5>Estimate the relative abundance of the following types of vegetation present.</h5>
+
+<h4>Plants in Stream</h4>
+
+<label>Algae on Surfaces of Rocks or Plants</label>
+[select* algae-abundance include_blank "Absent" "Rare" "Common" "Abundant" "Dominant"]
+
+<label>Macrophytes (Standing Plants)</label>
+[select* macrophytes-abundance include_blank "Absent" "Rare" "Common" "Abundant" "Dominant"]
+
+<label>Macrophytes (Streamers)</label>
+[select* macrophytes-abundance include_blank "Absent" "Rare" "Common" "Abundant" "Dominant"]
+
+<label>Other</label>
+[select* other-plants-in-stream-abundance include_blank "Absent" "Rare" "Common" "Abundant" "Dominant"]
+
+<h4>Plants on Bank and Riparian Zone</h4>
+
+<label>Shrubs</label>
+[select* shrubs-abundance include_blank "Absent" "Rare" "Common" "Abundant" "Dominant"]
+
+<label>Grasses</label>
+[select* grasses-abundance include_blank "Absent" "Rare" "Common" "Abundant" "Dominant"]
+
+<label>Trees</label>
+[select* trees-abundance include_blank "Absent" "Rare" "Common" "Abundant" "Dominant"]
+
+<label>Other</label>
+[select* other-plants-on-bank-abundance include_blank "Absent" "Rare" "Common" "Abundant" "Dominant"]
+
+<h4>Streambed Substrate</h4>
+
+<table>
+<tr>
+  <th><strong>Substrate type</strong></th>
+  <th><strong>Size</strong></th>
+  <th><strong>Percent of stream bed</strong></th>
+  <th><strong>Percent Embedded</strong></th>
+</tr>
+<tr>
+  <td>Boulder</td>
+  <td>&gt; 10" diameter</td>
+  <td>[text* stream-bed-percent-boulder 15/ id:stream-bed-percent-boulder]</td>
+  <td>[text* percent-embedded-boulder 15/ id:percent-embedded-boulder]</td>
+</tr>
+<tr>
+  <td>Cobble</td>
+  <td>2.5" - 10" diameter</td>
+  <td>[text* stream-bed-percent-cobble 15/ id:stream-bed-percent-cobble]</td>
+  <td>[text* percent-embedded-cobble 15/ id:percent-embedded-cobble]</td>
+</tr>
+<tr>
+  <td>Gravel</td>
+  <td>0.1" - 2.5" diameter</td>
+  <td>[text* stream-bed-percent-gravel 15/ id:stream-bed-percent-gravel]</td>
+  <td>[text* percent-embedded-gravel 15/ id:percent-embedded-gravel]</td>
+</tr>
+<tr>
+  <td>Sand</td>
+  <td>Coarse grain</td>
+  <td>[text* stream-bed-percent-sand 15/ id:stream-bed-percent-sand]</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Fines: Silt / Detritus / Muck</td>
+  <td>Fine grain / organic matter</td>
+  <td>[text* stream-bed-percent-fines 15/ id:stream-bed-percent-fines]</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Hardpan / Bedrock</td>
+  <td>Solid clay / rock surface</td>
+  <td>[text* stream-bed-percent-hardpan 15/ id:stream-bed-percent-hardpan]</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Artificial</td>
+  <td>Man-made</td>
+  <td>[text* stream-bed-percent-artificial 15/ id:stream-bed-percent-artificial]</td>
+  <td></td>
+</tr>
+<tr>
+  <td>[text* other-substrate-type 20/ id:other-substrate-type placeholder "Other (specify)"]</td>
+  <td>[text* other-substrate-size 15/ id:other-substrate-size]</td>
+  <td>[text* stream-bed-percent-other 15/ id:stream-bed-percent-other]</td>
+  <td></td>
+</tr>
+</table>
+
+
+
+<h3>Identification and Assesment</h3>
+<p>Please use the letter codes "R" (rare) for 1 to 10 and "C" (common) for 11 or more.</p>
+
+<h4>Group 1: Sensitive</h4>
+<label>Caddisfly Larvae (Trichoptera)
+[text caddisfly-larvae 15/ id:caddisfly-larvae]</label>
+
+<label>Hellgrammites (Megaloptera)
+[text hellgrammites 15/ id:hellgrammites]</label>
+
+<label>Mayfly nymphs (Ephemeroptera)
+[text mayflys 15/ id:mayflys]</label>
+
+<label>Gilled (right-handed) snails (Gastropoda)
+[text gilled-snails 15/ id:gilled-snails]</label>
+
+<label>Stonefly nymphs (Megaloptera)
+[text stonefly 15/ id:stonefly]</label>
+
+<label>Water Penny (Coleoptera)
+[text waterpenny 15/ id:waterpenny]</label>
+
+<label>Water Snipe Fly (Diptera)
+[text watersnipefly 15/ id:watersnipefly]</label>
+
+
+<h4>Group 2: Somewhat Sensitive</h4>
+
+<label>Alderfly larvae (Megaloptera)
+[text alderfly 15/ id:alderfly]</label>
+
+<label>Beetle adults (Coleoptera)
+[text beetle-adults 15/ id:beetle-adults]</label>
+
+<label>Beetle larvae (Coleoptera)
+[text beetle-adults 15/ id:beetle-adults]</label>
+
+<label>Black fly larvae (Diptera)
+[text blackfly 15/ id:blackfly]</label>
+
+<label>Clams (from count) (Pelecypoda)
+[text clams 15/ id:clams]</label>
+
+<label>Crane fly larvae (Diptera)
+[text hellgrammites 15/ id:hellgrammites]</label>
+
+<label>Crayfish (from count) (Decapoda)
+[text crayfish 15/]</label>
+
+<label>Damselfly nymphs (Odonata)
+[text damselfly 15/]</label>
+
+<label>Dragonfly nymphs (Odonata)
+[text dragonfly 15/]</label>
+
+<label>Net-spinning caddisfly larvae (Hydropsychidae and Trichoptera)
+[text caddisfly-larvae 15/]</label>
+
+<label>Scuds (Amphipoda)
+[text scuds 15/]</label>
+
+<label>Sowbugs (Isopoda)
+[text sowbugs 15/]</label>
+
+<h4>Group 3: Tolerant</h4>
+
+<label>Aquatic worms (Oligochaeta)
+[text aquatic_worms 15/]</label>
+
+<label>Leeches (Hirudinea)
+[text leeches 15/]</label>
+
+<label>Midge larvae (Diptera)
+[text midge_larvae 15/]</label>
+
+<label>Pouch Snails (Gastropoda)
+[text pouch_snails 15/]</label>
+
+<label>True bugs (Hemiptera)
+[text true_bugs 15/]</label>
+
+<label>Other true flies (Diptera)
+[text other_true_flies 15/]</label>
+
+<label>Total Stream Quality Score</label>
+[text* stream_quality_score]
+
+<label>Total Stream Quality Grade</label>
+[select stream_quality_grade "Poor (< 19)" "Fair (19 - 33)" "Good (34 - 48)" "Excellent (> 48)"]
+
+<p>[submit "Save assessment"]</p>
