@@ -1,9 +1,9 @@
 <h2>I. Stream, Team, Location Information</h2>
 
-<label>Stream name:</label>
+<label>Stream name</label>
 [select* site_name include_blank "Brent Run Creek" "Brent Run Headwaters" "Butternut Creek Headwaters" "Butternut Creek" "Evergreen Creek" "Farmers Creek" "Flint River Flushing" "Flint River Richfield" "Flint River South" "Flint River, Northbranch" "Gilkey Creek Headwaters" "Gilkey Creek" "Hasler Creek Headwaters" "Hasler Creek" "Hunters Creek" "Indian Creek" "Kearsley Creek Headwaters" "Kearsley Creek" "Misteguay Creek Headwaters" "Misteguay Creek" "Pine Run Creek" "Pine Run Headwaters" "Plum Creek" "Shiawasee River Argentine" "Shiawasee River Linden" "Silver Creek" "Springbank Creek" "Squaw Creek" "Swartz Creek Headwaters" "Swartz Creek" "Thread Creek Headwaters" "Thread Creek"]
 
-<label>Collection Start Time:</label>
+<label>Collection Start Time</label>
 [text* text-403 5/4 id:start-time placeholder "8:20"][radio radio-49 "AM" "PM"]
 
 <label>Collection End Time</label>
@@ -16,66 +16,66 @@
 [select menu-656 id:huc-code "Please Choose One" "HUC-2 (Region)" "HUC-4 (Sub-region)" "HUC-6 (Basin)" "HUC-8 (Sub-basin)" "HUC-10 (Watershed)" "HUC-12 (Sub-watershed)"]
 
 <label>Latitude</label>
-[number number-125 id:latitude min:42 max:44 placeholder "Degrees"][number number-582 id:latitude-minutes placeholder "Minutes"][number number-770 id:latitude-seconds placeholder "Seconds"] <strong>N</strong>
+[number lat_degrees id:latitude min:42 max:44 placeholder "Degrees"][number lat_minutes id:latitude-minutes placeholder "Minutes"][number lat_seconds id:latitude-seconds placeholder "Seconds"] <strong>N</strong>
 
 <label>Longitude</label>
-[number number-125 id:longitude min:-82 max:-84][number number-582 id:longitude-minutes][number number-770 id:longitude-seconds] <strong>W</strong>
+[number lng_degrees id:longitude min:-84 max:-82][number lng_minutes id:longitude-minutes][number lng_seconds id:longitude-seconds] <strong>W</strong>
 
 <h3>Monitoring Team</h3>
-<label>Name(s) of person(s) completing datasheet:</label>
-[textarea textarea-650 15x5 id:persons-involved placeholder "Please separate names with commas."]
+<label>Name(s) of person(s) completing datasheet</label>
+[textarea monitoring_team 15x5 id:persons-involved placeholder "Please separate names with commas."]
 
-<label>Name(s) of person(s) collecting:</label>
-[textarea textarea-41 15x5 id:persons-collecting placeholder "Please separate names with commas."]
+<label>Name(s) of person(s) collecting</label>
+[textarea persons_collection 15x5 id:persons-collecting placeholder "Please separate names with commas."]
 
-<label>Other team members:</label>
-[textarea textarea-31 15x5 id:other-tms placeholder "Please separate names with commas."]
+<label>Other team members</label>
+[textarea team_members 15x5 id:other-tms placeholder "Please separate names with commas."]
 
 <h3>Macroinvertebrae Collection:</h3><label>Check the habitats that were sampled. make sure you are sampling <em>all</em> habitats present (within a 300 foot sampling reach as described in your site directions).
 
-[checkbox checkbox-677 id:macroinvertebrae-collection use_label_element "Riffles" "Overhanging Vegetation" "Rooted Aquatic Plants" "Runs" "Undercut banks" "Large Rocks" "Leaf Packs" "Pools" "Eddies" "Submerged Wood/Woody debris" "Other"][text* other_macroinvertebrae_collection 50/]
+[checkbox macroinvertebrae_collection id:macroinvertebrae-collection use_label_element "Riffles" "Overhanging Vegetation" "Rooted Aquatic Plants" "Runs" "Undercut banks" "Large Rocks" "Leaf Packs" "Pools" "Eddies" "Submerged Wood/Woody debris" "Other"][text* other_macroinvertebrae_collection 50/]
 
-<label>Did you see any:</label>
-[radio radio-776 id:live-crayfish use_label_element "Live Crayfish" "Live Clams"]
+<label>Did you see any</label>
+[checkbox live_clams_crayfish id:live-crayfish use_label_element "Live Crayfish" "Live Clams"]
 
 <label>If yes, how many live crayfish?</label>
-[number number-564 id:live-crayfish-number min:0 step:1]
+[number crayfish_count id:live-crayfish-number min:0 step:1]
 
 <label>If yes, how many live clams?</label>
-[number number-661 id:live-clam-number min:0 step:1]
+[number clam_count id:live-clam-number min:0 step:1]
 
 <p><strong>Comments</strong>: Were other wildlife present, including fish? If yes, please list what was seen and how many.</p>
-[textarea textarea-851 15x5 id:other-wildlife placeholder "Raccoons, catfish, friendly dogs, etc.,"]
+[textarea wildlife_comments 15x5 id:other-wildlife placeholder "Raccoons, catfish, friendly dogs, etc.,"]
 
 <h3>II. Flow Measurement</h3>
 
 <label>Average Width (in feet)</label>
-[number* number-45 id:avg-width]
+[number* average_width id:avg-width]
 
 <label>Average Depth (in feet)</label>
-[number* number-141 id:avg-depth]
+[number* average_depth id:avg-depth]
 
 <label>Average Flow (in seconds)</label>
-[number* number-795 id:avg-flow min:0]
+[number* average_flow id:avg-flow min:0]
 
 <h3>III. Bank Conditions</h3>
 
 <h4>A. Bank Angles</h4>
 
 <h5>Undercut (Acute) %</h5>
-<label>Left Bank</label>[number* left-undercut-bank-angle id:left-undercut-bank-angles min:0 max:100]
+<label>Left Bank</label>[number left-undercut-bank-angle id:left-undercut-bank-angles min:0 max:100]
 
-<label>Right Bank</label>[number* right-undercut-bank-angle id:right-undercut-bank-angles min:0 max:100]
+<label>Right Bank</label>[number right-undercut-bank-angle id:right-undercut-bank-angles min:0 max:100]
 
 <h5>Obtuse %</h5>
-<label>Left Bank</label>[number* left-obtuse-bank-angle id:left-obtuse-bank-angles min:0 max:100]
+<label>Left Bank</label>[number left-obtuse-bank-angle id:left-obtuse-bank-angles min:0 max:100]
 
-<label>Right Bank</label>[number* right-obtuse-bank-angle id:right-obtuse-bank-angles min:0 max:100]
+<label>Right Bank</label>[number right-obtuse-bank-angle id:right-obtuse-bank-angles min:0 max:100]
 
 <h5>Right %</h5>
-<label>Left Bank</label>[number* left-right-bank-angle id:left-right-bank-angles min:0 max:100]
+<label>Left Bank</label>[number left-right-bank-angle id:left-right-bank-angles min:0 max:100]
 
-<label>Right Bank</label>[number* right-right-bank-angle id:right-right-bank-angles min:0 max:100]
+<label>Right Bank</label>[number right-right-bank-angle id:right-right-bank-angles min:0 max:100]
 
 <h4>B. Bank Stability and Erosion</h4>
 <label>Left Bank</label>
@@ -86,10 +86,10 @@
 
 <h4>C. Riparian Zone</h4>
 <p><label>Left bank</label>Select all that apply:</p>
-[checkbox land-types-left id:land-types-left use_label_element "Wetlands" "Forest" "Residential Lawn" "Park" "Shrub, Old Field" "Agriculture" "Construction" "Commercial" "Industrial" "Road" "Golf Course" "Highways" "Other"][text land-types-left-other 15/5 id:land-types-left-other]
+[checkbox land-types-left id:land-types-left use_label_element "Wetlands" "Forest" "Residential Lawn" "Park" "Shrub, Old Field" "Agriculture" "Construction" "Commercial" "Industrial" "Road" "Golf Course" "Highways" "Other"][text land-types-left-other id:land-types-left-other]
 
 <p><label>Right bank</label>Select all that apply:</p>
-[checkbox land-types-right id:land-types-right use_label_element "Wetlands" "Forest" "Residential Lawn" "Park" "Shrub, Old Field" "Agriculture" "Construction" "Commercial" "Industrial" "Road" "Golf Course" "Highways" "Other"][text land-types-left-other 15/5 id:land-types-left-other]
+[checkbox land-types-right id:land-types-right use_label_element "Wetlands" "Forest" "Residential Lawn" "Park" "Shrub, Old Field" "Agriculture" "Construction" "Commercial" "Industrial" "Road" "Golf Course" "Highways" "Other"][text land-types-left-other id:land-types-left-other]
 
 <label>Left Bank</label>
 [radio land-types-left-scale id:land-types-left-scale use_label_element "10" "9" "8" "7" "6" "5" "4" "3" "2" "1"]
@@ -100,23 +100,20 @@
 <h4>IV. Stream and Riparian Habitat</h4>
 <h5>A. General Information (select all that apply)</h5>
 
-<label>Monitoring Even Conditions</label>
-[checkbox event-conditions id:event-conditions use_label_element "Rain" "Sunny" "Windy" "Other"][text event-conditions-other 15/5 id:event-conditions-other]
+<label>Monitoring Event Conditions</label>
+[checkbox event-conditions id:event-conditions use_label_element "Rain" "Sunny" "Windy" "Other"][text event-conditions-other id:event-conditions-other]
 
 <label>Water Temperature (Celsius)</label>
-[text* water-temp 15/ id:water-temp]
+[number* water_temp id:water-temp step:1]
 
 <label>Air Temperature (Celsius)</label>
-[text* air-temp 15/ id:air-temp]
+[number* air_temp id:air-temp step:1]
 
 <label>Channel Condition<label>
 [checkbox channel-conditions id:channel-conditions use_label_element "Natural" "Recovering" "Maintained"]
 
 <label>Has this stream been channelized?<label>
 [checkbox channelized id:channelized use_label_element "Yes, currently" "Yes, sometime in the past" "No"]
-
-<label>Estimate of current stream flow<label>
-[checkbox stream-flow id:stream-flow use_label_element "Dry" "Stagnant" "Low" "Medium" "High"]
 
 <label>Estimate of current stream flow<label>
 [checkbox stream-flow id:stream-flow use_label_element "Dry" "Stagnant" "Low" "Medium" "High"]
@@ -139,7 +136,7 @@
 <label><strong>If yes</strong>, does the foam feel gritty or slippery?<label>
 [radio foam-if-yes id:foam-if-yes use_label_element "Gritty (most likely natural)" "Slippery (most likely artificial)"]
 
-<label>If the water <strong>smells</strong>, please describe:</label>
+<label>If the water <strong>smells</strong>, please describe</label>
 [text* water-smell 40/ id:water-smell]
 
 <label>Has it rained in the past five (5) days?</label>
@@ -164,10 +161,10 @@
 [select* algae-abundance include_blank "Absent" "Rare" "Common" "Abundant" "Dominant"]
 
 <label>Macrophytes (Standing Plants)</label>
-[select* macrophytes-abundance include_blank "Absent" "Rare" "Common" "Abundant" "Dominant"]
+[select* macrophytes_abundance include_blank "Absent" "Rare" "Common" "Abundant" "Dominant"]
 
-<label>Macrophytes (Streamers)</label>
-[select* macrophytes-abundance include_blank "Absent" "Rare" "Common" "Abundant" "Dominant"]
+<label>Filamentous Algae (Streamers)</label>
+[select* filamentous_algae_abundance include_blank "Absent" "Rare" "Common" "Abundant" "Dominant"]
 
 <label>Other</label>
 [select* other-plants-in-stream-abundance include_blank "Absent" "Rare" "Common" "Abundant" "Dominant"]
@@ -198,49 +195,49 @@
 <tr>
   <td>Boulder</td>
   <td>&gt; 10" diameter</td>
-  <td>[text* stream-bed-percent-boulder 15/ id:stream-bed-percent-boulder]</td>
-  <td>[text* percent-embedded-boulder 15/ id:percent-embedded-boulder]</td>
+  <td>[text stream-bed-percent-boulder 15/ id:stream-bed-percent-boulder]</td>
+  <td>[text percent-embedded-boulder 15/ id:percent-embedded-boulder]</td>
 </tr>
 <tr>
   <td>Cobble</td>
-  <td>2.5" - 10" diameter</td>
-  <td>[text* stream-bed-percent-cobble 15/ id:stream-bed-percent-cobble]</td>
-  <td>[text* percent-embedded-cobble 15/ id:percent-embedded-cobble]</td>
+  <td>2.5" &mdash; 10" diameter</td>
+  <td>[text stream-bed-percent-cobble 15/ id:stream-bed-percent-cobble]</td>
+  <td>[text percent-embedded-cobble 15/ id:percent-embedded-cobble]</td>
 </tr>
 <tr>
   <td>Gravel</td>
-  <td>0.1" - 2.5" diameter</td>
-  <td>[text* stream-bed-percent-gravel 15/ id:stream-bed-percent-gravel]</td>
-  <td>[text* percent-embedded-gravel 15/ id:percent-embedded-gravel]</td>
+  <td>0.1" &mdash; 2.5" diameter</td>
+  <td>[text stream-bed-percent-gravel 15/ id:stream-bed-percent-gravel]</td>
+  <td>[text percent-embedded-gravel 15/ id:percent-embedded-gravel]</td>
 </tr>
 <tr>
   <td>Sand</td>
   <td>Coarse grain</td>
-  <td>[text* stream-bed-percent-sand 15/ id:stream-bed-percent-sand]</td>
+  <td>[text stream-bed-percent-sand 15/ id:stream-bed-percent-sand]</td>
   <td></td>
 </tr>
 <tr>
   <td>Fines: Silt / Detritus / Muck</td>
   <td>Fine grain / organic matter</td>
-  <td>[text* stream-bed-percent-fines 15/ id:stream-bed-percent-fines]</td>
+  <td>[text stream-bed-percent-fines 15/ id:stream-bed-percent-fines]</td>
   <td></td>
 </tr>
 <tr>
   <td>Hardpan / Bedrock</td>
   <td>Solid clay / rock surface</td>
-  <td>[text* stream-bed-percent-hardpan 15/ id:stream-bed-percent-hardpan]</td>
+  <td>[text stream-bed-percent-hardpan 15/ id:stream-bed-percent-hardpan]</td>
   <td></td>
 </tr>
 <tr>
   <td>Artificial</td>
   <td>Man-made</td>
-  <td>[text* stream-bed-percent-artificial 15/ id:stream-bed-percent-artificial]</td>
+  <td>[text stream-bed-percent-artificial 15/ id:stream-bed-percent-artificial]</td>
   <td></td>
 </tr>
 <tr>
-  <td>[text* other-substrate-type 20/ id:other-substrate-type placeholder "Other (specify)"]</td>
-  <td>[text* other-substrate-size 15/ id:other-substrate-size]</td>
-  <td>[text* stream-bed-percent-other 15/ id:stream-bed-percent-other]</td>
+  <td>[text other-substrate-type 20/ id:other-substrate-type placeholder "Other (specify)"]</td>
+  <td>[text other-substrate-size 15/ id:other-substrate-size]</td>
+  <td>[text stream-bed-percent-other 15/ id:stream-bed-percent-other]</td>
   <td></td>
 </tr>
 </table>
@@ -312,7 +309,7 @@ Severity: S - slight (0% - 25%), M - moderate (26% - 75%), H - high (76% - 100%)
 <label>Does a team need to come out and collect trash? [radio trash_collection use_label_element "Yes" "No"]
 
 <label>Additional Comments</label>
-[textarea* add_degradation_comments 15x5]
+[textarea add_degradation_comments]
 
 <h3>Identification and Assesment</h3>
 <p>Please use the letter codes "R" (rare) for 1 to 10 and "C" (common) for 11 or more.</p>
@@ -400,10 +397,6 @@ Severity: S - slight (0% - 25%), M - moderate (26% - 75%), H - high (76% - 100%)
 
 <h4>Stream Quality Score</h4>
 <h5>Group 1</h5>
-[text* group_1_qa_score 15/]
-
-<h4>Stream Quality Score</h4>
-<h5>Group 1</h5>
 <label>[text* group_1_R_score_input 15/] # of R's x 5.0 = [text* group_1_R_score_result 15/]</label>
 <label>[text* group_1_C_score_input 15/] # of C's x 5.3 = [text* group_1_C_score_result 15/]</label>
 <label><strong>Group 1 Total =</strong> [text* group_1_total 15/]</label>
@@ -422,21 +415,21 @@ Severity: S - slight (0% - 25%), M - moderate (26% - 75%), H - high (76% - 100%)
 [text* stream_quality_score]
 
 <label>Total Stream Quality Grade</label>
-[select stream_quality_grade "Poor (< 19)" "Fair (19 - 33)" "Good (34 - 48)" "Excellent (> 48)"]
+[select* stream_quality_grade "Poor (< 19)" "Fair (19 - 33)" "Good (34 - 48)" "Excellent (> 48)"]
 
-<label>Identifications made by:</label>
+<label>Identifications made by</label>
 [text* ids_made_by 50/]
 
-<label>Rate your confidence in these identifications (5 being most confident):</label>
+<label>Rate your confidence in these identifications (5 being most confident)</label>
 [radio confidence_in_score "5" "4" "3" "2" "1"]
 
-<label>Data sheet check for completeness by:</label>
+<label>Data sheet check for completeness by</label>
 [text* completeness_check 50/]
 
-<label>Data entered into MiCorps database by:</label>
-[text* micorps_database_entry 50/]
+<label>Data entered into MiCorps database by</label>
+[text micorps_database_entry 50/]
 
-<label>Date entered:</label>
+<label>Date entered</label>
 [date entry_date]
 
 <p>[submit "Save assessment"]</p>
