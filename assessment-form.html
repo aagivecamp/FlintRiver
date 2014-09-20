@@ -1,7 +1,7 @@
 <h2>I. Stream, Team, Location Information</h2>
 
-<label>Site name:</label>
-[select* site_name include_blank "Flint River South" "Plum Creek" "Hasler Creek" "Flint River, Northbranch" "Pine Run Creek" "Misteguay Creek" "Flint River Flushing" "Swartz Creek" "Gilkey Creek" "Thread Creek" "Kearsley Creek" "Butternut Creek" "Farmers Creek" "Squaw Creek" "Brent Run Creek" "Flint River Richfield" "Silver Creek" "Indian Creek" "Hunters Creek" "Misteguay Creek Headwaters" "Brent Run Headwaters" "Swartz Creek Headwaters" "Thread Creek Headwaters" "Kearsley Creek Headwaters" "Gilkey Creek Headwaters" "Butternut Creek Headwaters" "Hasler Creek Headwaters" "Springbank Creek" "Evergreen Creek" "Pine Run Headwaters" "Shiawasee River Argentine" "Shiawasee River Linden"]
+<label>Stream name:</label>
+[select* site_name include_blank "Brent Run Creek" "Brent Run Headwaters" "Butternut Creek Headwaters" "Butternut Creek" "Evergreen Creek" "Farmers Creek" "Flint River Flushing" "Flint River Richfield" "Flint River South" "Flint River, Northbranch" "Gilkey Creek Headwaters" "Gilkey Creek" "Hasler Creek Headwaters" "Hasler Creek" "Hunters Creek" "Indian Creek" "Kearsley Creek Headwaters" "Kearsley Creek" "Misteguay Creek Headwaters" "Misteguay Creek" "Pine Run Creek" "Pine Run Headwaters" "Plum Creek" "Shiawasee River Argentine" "Shiawasee River Linden" "Silver Creek" "Springbank Creek" "Squaw Creek" "Swartz Creek Headwaters" "Swartz Creek" "Thread Creek Headwaters" "Thread Creek"]
 
 <label>Collection Start Time:</label>
 [text* text-403 5/4 id:start-time placeholder "8:20"][radio radio-49 "AM" "PM"]
@@ -16,10 +16,10 @@
 [select menu-656 id:huc-code "Please Choose One" "HUC-2 (Region)" "HUC-4 (Sub-region)" "HUC-6 (Basin)" "HUC-8 (Sub-basin)" "HUC-10 (Watershed)" "HUC-12 (Sub-watershed)"]
 
 <label>Latitude</label>
-[number number-125 id:latitude min:42 max:44 placeholder "Degrees"][number number-582 id:latitude-minutes placeholder "Minutes"][number number-770 id:latitude-seconds placeholder "Seconds"]
+[number number-125 id:latitude min:42 max:44 placeholder "Degrees"][number number-582 id:latitude-minutes placeholder "Minutes"][number number-770 id:latitude-seconds placeholder "Seconds"] <strong>N</strong>
 
 <label>Longitude</label>
-[number number-125 id:longitude min:-82 max:-84][number number-582 id:longitude-minutes][number number-770 id:longitude-seconds]
+[number number-125 id:longitude min:-82 max:-84][number number-582 id:longitude-minutes][number number-770 id:longitude-seconds] <strong>W</strong>
 
 <h3>Monitoring Team</h3>
 <label>Name(s) of person(s) completing datasheet:</label>
