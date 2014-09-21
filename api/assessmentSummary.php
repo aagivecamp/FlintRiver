@@ -13,11 +13,15 @@
 	function getAssessmentSummaries ($params) {
 		global $wpdb;
 
-		$assessment_form_fields = array('site_name', 'assessment_date', 'stream_quality_score', 'stream_quality_grade');
+		if (array_key_exists('scope', $_GET) && $_GET['scope'] == 'full') {
+			$assessment_form_fields = array();
+		} else {
+			$assessment_form_fields = array('site_name', 'assessment_date', 'stream_quality_score', 'stream_quality_grade');
+		}
+
 		$site_form_fields = array('site_name','site_id','lat_degrees','lat_minutes','lat_seconds','lng_degrees','lng_minutes','lng_seconds','site_directions');
 
 		$assessments = $wpdb->get_results('SELECT submit_time, field_name, field_value FROM wp_cf7dbplugin_submits WHERE form_name = "'.$GLOBALS['ASSESSMENT_FORM_NAME'].'"', ARRAY_A);
-
 		$sites = $wpdb->get_results('SELECT submit_time, field_name, field_value FROM wp_cf7dbplugin_submits WHERE form_name = "'.$GLOBALS['NEW_SITE_FORM_NAME'].'"', ARRAY_A);
 
 		$assessments = massageData($assessments, $assessment_form_fields);
@@ -43,6 +47,7 @@
 		try {
 			$response['data'] = getAssessmentSummaries($_GET);
 			$response['result'] = 200;
+			header('HTTP/1.1 200 OK');
 		} catch (Exception $e) {
 			$response['data'] = $e->getMessage();
 		}
@@ -50,4 +55,5 @@
 		$response['data'] = 'This API does not support that method.';
 	}
 
+	header('Content-Type: application/json');
 	echo(json_encode($response));
