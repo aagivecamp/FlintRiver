@@ -107,7 +107,7 @@ function initialize() {
         var newMarker = new google.maps.Marker({
             position: new google.maps.LatLng(marker.lat, marker.lng),
             map: map,
-            icon: 'https://dl.dropboxusercontent.com/u/1991578/icon.png',
+            icon: 'http://flintriver.org/images/icon.png',
             title: marker.name
         });
         markerArray[index] = newMarker;
