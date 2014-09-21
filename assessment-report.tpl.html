@@ -313,42 +313,48 @@ Trash collection: ${trash_collection}
 Additional comments: ${add_degradation_comments}
 
 <h3>Identification and Assesment</h3>
-<p>Please use the letter codes "R" (rare) for 1 to 10 and "C" (common) for 11 or more.</p>
+<table>
+  <tbody>
+    <tr><td colspan=2><h4>Group 1: Sensitive</h4></td></tr>
+    <tr><td>Caddisfly Larvae (Trichoptera)</td><td>${caddisfly_count}</td></tr>
+    <tr><td>Hellgrammites (Megaloptera)</td><td>${hellgrammites_count}</td></tr>
+    <tr><td>Mayfly nymphs (Ephemeroptera)</td><td>${mayfly_count}</td></tr>
+    <tr><td>Gilled (right-handed) snails (Gastropoda)</td><td>${gilled_snail_count}</td></tr>
+    <tr><td>Stonefly nymphs (Plecoptera)</td><td>${stonefly_nymphs_count}</td></tr>
+    <tr><td>Water Penny (Coleoptera)</td><td>${water_penny_count}</td></tr>
+    <tr><td>Water Snipe Fly (Diptera)</td><td>${water_snipe_count}</td></tr>
 
-<h4>Group 1: Sensitive</h4>
-Caddisfly Larvae (Trichoptera): ${caddisfly_count}
-Hellgrammites (Megaloptera): ${hellgrammites_count}
-Mayfly nymphs (Ephemeroptera): ${mayfly_count}
-Gilled (right-handed) snails (Gastropoda): ${gilled_snail_count}
-Stonefly nymphs (Plecoptera): ${stonefly_nymphs_count}
-Water Penny (Coleoptera): ${water_penny_count}
-Water Snipe Fly (Diptera): ${water_snipe_count}
+    <tr><td colspan=2><h4>Group 2: Somewhat Sensitive</h4></td></tr>
+    <tr><td>Alderfly larvae (Megaloptera)</td><td>${alderfly_larvae_count}</td></tr>
+    <tr><td>Beetle adults (Coleoptera)</td><td>${beetle_adults_count}</td></tr>
+    <tr><td>Beetle larvae (Coleoptera)</td><td>${beetle_larvae_count}</td></tr>
+    <tr><td>Black fly larvae (Diptera)</td><td>${black_fly_larvae_count}</td></tr>
+    <tr><td>Clams (from count) (Pelecypoda)</td><td>${final_clams_count}</td></tr>
+    <tr><td>Crane fly larvae (Diptera)</td><td>${crane_flye_count}</td></tr>
+    <tr><td>Crayfish (from count) (Decapoda)</td><td>${final_crayfish_count}</td></tr>
+    <tr><td>Damselfly nymphs (Odonata)</td><td>${damselfly_count}</td></tr>
+    <tr><td>Dragonfly nymphs (Odonata)</td><td>${dragonfly_count}</td></tr>
+    <tr><td>Net-spinning caddisfly larvae (Hydropsychidae and Trichoptera)</td><td>${netSpinning_caddisfly_count}</td></tr>
+    <tr><td>Scuds (Amphipoda)</td><td>${scud_count}</td></tr>
+    <tr><td>Sowbugs (Isopoda)</td><td>${sowbug_count}</td></tr>
 
-<h4>Group 2: Somewhat Sensitive</h4>
-Alderfly larvae (Megaloptera): ${alderfly_larvae_count}
-Beetle adults (Coleoptera): ${beetle_adults_count}
-Beetle larvae (Coleoptera): ${beetle_larvae_count}
-Black fly larvae (Diptera): ${black_fly_larvae_count}
-Clams (from count) (Pelecypoda): ${final_clams_count}
-Crane fly larvae (Diptera): ${crane_flye_count}
-Crayfish (from count) (Decapoda): ${final_crayfish_count}
-Damselfly nymphs (Odonata): ${damselfly_count}
-Dragonfly nymphs (Odonata): ${dragonfly_count}
-Net-spinning caddisfly larvae (Hydropsychidae and Trichoptera): ${netSpinning_caddisfly_count}
-Scuds (Amphipoda): ${scud_count}
-Sowbugs (Isopoda): ${sowbug_count}
-
-<h4>Group 3: Tolerant</h4>
-Aquatic worms (Oligochaeta): ${aqautic_worms_count}
-Leeches (Hirudinea): ${leeches_count}
-Midge larvae (Diptera): ${midge_count}
-Pouch Snails (Gastropoda): ${pouch_snails_count}
-True bugs (Hemiptera): ${tree_bugs_count}
-Other true flies (Diptera): ${true_flies_count}
+    <tr><td colspan=2><h4>Group 3: Tolerant</h4></td></tr>
+    <tr><td>Aquatic worms (Oligochaeta)</td><td>${aqautic_worms_count}</td></tr>
+    <tr><td>Leeches (Hirudinea)</td><td>${leeches_count}</td></tr>
+    <tr><td>Midge larvae (Diptera)</td><td>${midge_count}</td></tr>
+    <tr><td>Pouch Snails (Gastropoda)</td><td>${pouch_snails_count}</td></tr>
+    <tr><td>True bugs (Hemiptera)</td><td>${tree_bugs_count}</td></tr>
+    <tr><td>Other true flies (Diptera)</td><td>${true_flies_count}</td></tr>
+  </tbody>
+</table>
 
 <h3>Conclusion</h3>
-Total Stream Quality Score: ${stream_quality_score}
-Total Stream Quality Grade: ${stream_quality_grade}
-Identifications made by: ${ids_made_by}
-Data sheet check for completeness by: ${completeness_check}
-Data entered into MiCorps database by: ${micorps_database_entry}
+<table>
+  <tbody>
+    <tr><td>Total Stream Quality Score</td><td>${stream_quality_score}</td></tr>
+    <tr><td>Total Stream Quality Grade</td><td>${stream_quality_grade}</td></tr>
+    <tr><td>Identifications made by</td><td>${ids_made_by}</td></tr>
+    <tr><td>Data sheet check for completeness by</td><td>${completeness_check}</td></tr>
+    <tr><td>Data entered into MiCorps database by</td><td>${micorps_database_entry}</td></tr>
+  </tbody>
+</table>
