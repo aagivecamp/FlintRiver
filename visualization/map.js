@@ -118,8 +118,8 @@ function initialize() {
         });
         windowArray[index] = infowindow;
         google.maps.event.addListener(newMarker, 'click', function() {
-            infowindow.open(map, newMarker);
             closeAllWindows();
+            infowindow.open(map, newMarker);
         });
     });
 
