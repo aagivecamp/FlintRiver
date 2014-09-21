@@ -363,88 +363,66 @@ Severity: S - slight (0% - 25%), M - moderate (26% - 75%), H - high (76% - 100%)
 [textarea add_degradation_comments]
 
 <h3>Identification and Assesment</h3>
-<p>Please use the letter codes "R" (rare) for 1 to 10 and "C" (common) for 11 or more.</p>
 
-<h4>Group 1: Sensitive</h4>
-<label>Caddisfly Larvae (Trichoptera)</label>
-[select caddisfly_count include_blank "Rare (1 - 10)" "Common (11+)"]
+<table>
+  <tbody>
+    <tr><td colspan=2><h4>Group 1: Sensitive</h4></td></tr>
+  
+    <tr><td>Caddisfly Larvae (Trichoptera)</td><td>[select caddisfly_count include_blank "Rare (1 - 10)" "Common (11+)"]</td></tr>
 
-<label>Hellgrammites (Megaloptera)</label>
-[select hellgrammites_count include_blank "Rare (1 - 10)" "Common (11+)"]
+    <tr><td>Hellgrammites (Megaloptera)</td><td>[select hellgrammites_count include_blank "Rare (1 - 10)" "Common (11+)"]</td></tr>
 
-<label>Mayfly nymphs (Ephemeroptera)</label>
-[select mayfly_count include_blank "Rare (1 - 10)" "Common (11+)"]
+    <tr><td>Mayfly nymphs (Ephemeroptera)</td><td>[select mayfly_count include_blank "Rare (1 - 10)" "Common (11+)"]</td></tr>
 
-<label>Gilled (right-handed) snails (Gastropoda)</label>
-[select gilled_snail_count include_blank "Rare (1 - 10)" "Common (11+)"]
+    <tr><td>Gilled (right-handed) snails (Gastropoda)</td><td>[select gilled_snail_count include_blank "Rare (1 - 10)" "Common (11+)"]</td></tr>
 
-<label>Stonefly nymphs (Plecoptera)</label>
-[select stonefly_nymphs_count include_blank "Rare (1 - 10)" "Common (11+)"]
+    <tr><td>Stonefly nymphs (Plecoptera)</td><td>[select stonefly_nymphs_count include_blank "Rare (1 - 10)" "Common (11+)"]</td></tr>
 
-<label>Water Penny (Coleoptera)</label>
-[select water_penny_count include_blank "Rare (1 - 10)" "Common (11+)"]
+    <tr><td>Water Penny (Coleoptera)</td><td>[select water_penny_count include_blank "Rare (1 - 10)" "Common (11+)"]</td></tr>
 
-<label>Water Snipe Fly (Diptera)</label>
-[select water_snipe_count include_blank "Rare (1 - 10)" "Common (11+)"]
+    <tr><td>Water Snipe Fly (Diptera)</td><td>[select water_snipe_count include_blank "Rare (1 - 10)" "Common (11+)"]</td></tr>
 
+    <tr><td colspan=2><h4>Group 2: Somewhat Sensitive</h4></td></tr>
+  
+    <tr><td>Alderfly larvae (Megaloptera)</td><td>[select alderfly_larvae_count include_blank "Rare (1 - 10)" "Common (11+)"]</td></tr>
 
-<h4>Group 2: Somewhat Sensitive</h4>
+    <tr><td>Beetle adults (Coleoptera)</td><td>[select beetle_adults_count include_blank "Rare (1 - 10)" "Common (11+)"]</td></tr>
 
-<label>Alderfly larvae (Megaloptera)</label>
-[select alderfly_larvae_count include_blank "Rare (1 - 10)" "Common (11+)"]
+    <tr><td>Beetle larvae (Coleoptera)</td><td>[select beetle_larvae_count include_blank "Rare (1 - 10)" "Common (11+)"]</td></tr>
 
-<label>Beetle adults (Coleoptera)</label>
-[select beetle_adults_count include_blank "Rare (1 - 10)" "Common (11+)"]
+    <tr><td>Black fly larvae (Diptera)</td><td>[select black_fly_larvae_count include_blank "Rare (1 - 10)" "Common (11+)"]</td></tr>
 
-<label>Beetle larvae (Coleoptera)</label>
-[select beetle_larvae_count include_blank "Rare (1 - 10)" "Common (11+)"]
+    <tr><td>Clams (from count) (Pelecypoda)</td><td>[select final_clams_count include_blank "Rare (1 - 10)" "Common (11+)"]</td></tr>
 
-<label>Black fly larvae (Diptera)</label>
-[select black_fly_larvae_count include_blank "Rare (1 - 10)" "Common (11+)"]
+    <tr><td>Crane fly larvae (Diptera)</td><td>[select crane_flye_count include_blank "Rare (1 - 10)" "Common (11+)"]</td></tr>
 
-<label>Clams (from count) (Pelecypoda)</label>
-[select final_clams_count include_blank "Rare (1 - 10)" "Common (11+)"]
+    <tr><td>Crayfish (from count) (Decapoda)</td><td>[select final_crayfish_count include_blank "Rare (1 - 10)" "Common (11+)"]</td></tr>
 
-<label>Crane fly larvae (Diptera)</label>
-[select crane_flye_count include_blank "Rare (1 - 10)" "Common (11+)"]
+    <tr><td>Damselfly nymphs (Odonata)</td><td>[select damselfly_count include_blank "Rare (1 - 10)" "Common (11+)"]</td></tr>
 
-<label>Crayfish (from count) (Decapoda)</label>
-[select final_crayfish_count include_blank "Rare (1 - 10)" "Common (11+)"]
+    <tr><td>Dragonfly nymphs (Odonata)</td><td>[select dragonfly_count include_blank "Rare (1 - 10)" "Common (11+)"]</td></tr>
 
-<label>Damselfly nymphs (Odonata)</label>
-[select damselfly_count include_blank "Rare (1 - 10)" "Common (11+)"]
+    <tr><td>Net-spinning caddisfly larvae (Hydropsychidae and Trichoptera)</td><td>[select netSpinning_caddisfly_count include_blank "Rare (1 - 10)" "Common (11+)"]</td></tr>
 
-<label>Dragonfly nymphs (Odonata)</label>
-[select dragonfly_count include_blank "Rare (1 - 10)" "Common (11+)"]
+    <tr><td>Scuds (Amphipoda)</td><td>[select scud_count include_blank "Rare (1 - 10)" "Common (11+)"]</td></tr>
 
-<label>Net-spinning caddisfly larvae (Hydropsychidae and Trichoptera)</label>
-[select netSpinning_caddisfly_count include_blank "Rare (1 - 10)" "Common (11+)"]
+    <tr><td>Sowbugs (Isopoda)</td><td>[select sowbug_count include_blank "Rare (1 - 10)" "Common (11+)"]</td></tr>
 
-<label>Scuds (Amphipoda)</label>
-[select scud_count include_blank "Rare (1 - 10)" "Common (11+)"]
+    <tr><td colspan=2><h4>Group 3: Tolerant</h4></td></tr>
+  
+    <tr><td>Aquatic worms (Oligochaeta)</td><td>[select aqautic_worms_count include_blank "Rare (1 - 10)" "Common (11+)"]</td></tr>
 
-<label>Sowbugs (Isopoda)</label>
-[select sowbug_count include_blank "Rare (1 - 10)" "Common (11+)"]
+    <tr><td>Leeches (Hirudinea)</td><td>[select leeches_count include_blank "Rare (1 - 10)" "Common (11+)"]</td></tr>
 
-<h4>Group 3: Tolerant</h4>
+    <tr><td>Midge larvae (Diptera)</td><td>[select midge_count include_blank "Rare (1 - 10)" "Common (11+)"]</td></tr>
 
-<label>Aquatic worms (Oligochaeta)</label>
-[select aqautic_worms_count include_blank "Rare (1 - 10)" "Common (11+)"]
+    <tr><td>Pouch Snails (Gastropoda)</td><td>[select pouch_snails_count include_blank "Rare (1 - 10)" "Common (11+)"]</td></tr>
 
-<label>Leeches (Hirudinea)</label>
-[select leeches_count include_blank "Rare (1 - 10)" "Common (11+)"]
+    <tr><td>True bugs (Hemiptera)</td><td>[select tree_bugs_count include_blank "Rare (1 - 10)" "Common (11+)"]</td></tr>
 
-<label>Midge larvae (Diptera)</label>
-[select midge_count include_blank "Rare (1 - 10)" "Common (11+)"]
-
-<label>Pouch Snails (Gastropoda)</label>
-[select pouch_snails_count include_blank "Rare (1 - 10)" "Common (11+)"]
-
-<label>True bugs (Hemiptera)</label>
-[select tree_bugs_count include_blank "Rare (1 - 10)" "Common (11+)"]
-
-<label>Other true flies (Diptera)</label>
-[select true_flies_count include_blank "Rare (1 - 10)" "Common (11+)"]
+    <tr><td>Other true flies (Diptera)</td><td>[select true_flies_count include_blank "Rare (1 - 10)" "Common (11+)"]</td></tr>
+  </tbody>
+</table>
 
 <h4>Stream Quality Score</h4>
 <h5>Group 1</h5>
