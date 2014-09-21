@@ -7,8 +7,8 @@ var data;
 //The template uses an old Jquery and does not like $ so you need to use jQuery
 
 jQuery.getJSON("http://flintriver.org/blog/api/assessmentSummary.php",function(apiData){
-
    data = apiData;
+   jQuery("#data-error").hide();
    console.log(data);
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -92,7 +92,7 @@ if (navigator.geolocation) {
 function initialize() {
 
     var mapOptions = {
-        zoom: 9,
+        zoom: 8,
         center: new google.maps.LatLng(43.07, -83.56)
     };
     map = new google.maps.Map(document.getElementById('map-canvas'),
@@ -120,13 +120,17 @@ function initialize() {
         google.maps.event.addListener(newMarker, 'click', function() {
             closeAllWindows();
             infowindow.open(map, newMarker);
+            jQuery(".list-group-item").removeClass("active");
+            jQuery('.list-group-item[data-index="'+index+'"]').addClass("active");
         });
     });
 
     jQuery(".list-group-item").click(function(){
        var index = jQuery(this).attr("data-index");
+       jQuery(".list-group-item").removeClass("active");
+       jQuery(this).addClass("active");
        closeAllWindows();
-       map.setCenter(data.data[index].gLatLng);
+       //map.setCenter(data.data[index].gLatLng);
        windowArray[index].open(map, markerArray[index]);
 
     });
@@ -140,33 +144,36 @@ function closeAllWindows(){
 
 function addListItem(marker,index){
      var html = "";
-    html += '<div  class="list-group-item" data-index="'+index+'">';
-    html += "<h3>" + marker.site_name + "</h3>";
-    html += "<br>";
+
     if(marker.assessments){
-    html += "<label>Last Assessment</label>";
-    html += "<table class='table table-striped table-bordered'>";
-    html +=  "<thead>";
-    html += "<tr>";
-    html += "   <th>Date</th>";
-    html += "   <th>Score</th>";
-    html += "    <th>Grade</th>";
-    html += "   </tr>";
-    html += "</thead>";
-    html += "<tbody>";
-    html += "<tr>";
-    html += "   <td>"+marker.assessments[0].assessment_date+"</td>";
-    html += "   <td>"+marker.assessments[0].stream_quality_score+"</td>";
-    html += "    <td>"+marker.assessments[0].stream_quality_grade+"</td>";
-    html += "   </tr>";
-    html += "</tbody>";
-    html += "</table>";
+        var grade  = marker.assessments[0].stream_quality_grade.split(" ")[0];
+        html += '<div  class="list-group-item" data-index="'+index+'">';
+        html += "<span class='site-name'>" + marker.site_name +"</span><div class='site-quality "+grade+"'><span class='site-score'>"+marker.assessments[0].stream_quality_score+"</span> <span class='site-grade'>"+grade+"</span></div>";
+    // html += "<label>Last Assessment</label>";
+    // html += "<table class='table table-striped table-bordered'>";
+    // html +=  "<thead>";
+    // html += "<tr>";
+    // html += "   <th>Date</th>";
+    // html += "   <th>Score</th>";
+    // html += "    <th>Grade</th>";
+    // html += "   </tr>";
+    // html += "</thead>";
+    // html += "<tbody>";
+    // html += "<tr>";
+    // html += "   <td>"+marker.assessments[0].assessment_date+"</td>";
+    // html += "   <td>"+marker.assessments[0].stream_quality_score+"</td>";
+    // html += "    <td>"+marker.assessments[0].stream_quality_grade+"</td>";
+    // html += "   </tr>";
+    // html += "</tbody>";
+    // html += "</table>";
     }else{
-     html +=    '<i>No recent assessments</i>';
+         html += '<div  class="list-group-item" data-index="'+index+'">';
+        html += "<span class='site-name'>" + marker.site_name +"</span><div class='site-quality'><span class='site-score'>N/A</span> <span class='site-grade'></span></div>";
     }
     html += "</div>";
     
     jQuery(".list-group").append(html);
+
     
 }
 //google.maps.event.addDomListener(window, 'load', initialize);
@@ -224,6 +231,7 @@ function getWindowHTML(marker){
     ret += "<div class='infoWindow'>";
     ret += "<h4>" + marker.site_name + "</h4>";
     ret += "<br>";
+    ret += "<div class='infowindow-assessment-container'>";
     ret += "<label>Assessments</label>";
     ret += "<table class='table table-striped table-bordered'>";
     ret +=  "<thead>";
@@ -236,6 +244,7 @@ function getWindowHTML(marker){
     ret += "</thead>";
     ret += "<tbody>";
     if(marker.assessments){
+   
     jQuery.each(marker.assessments,function(index,assesment){
     ret += "<tr>";
     ret += "   <td>"+assesment.assessment_date+"</td>";
@@ -245,11 +254,13 @@ function getWindowHTML(marker){
     ret += "    <td><a href="+assesmentLink+">Full Assessment</a></td>";
     ret += "   </tr>";
     });
+    
     }else{
      ret +=   "<tr><td colspan='4'><i>No recent assessments</i></td></tr>";
     }
     ret += "</tbody>";
     ret += "</table>";
+    ret += "</div>";
     ret += "<hr>";
 
     ret += "<p><b>Directions:</b><br>"+marker.site_directions+"</p>";
