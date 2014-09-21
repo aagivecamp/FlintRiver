@@ -1,0 +1,354 @@
+<h2>I. Stream, Team, Location Information</h2>
+Site name: ${site_name}
+Assessment date: ${assessment_date}
+Start time: ${assessment_start} ${assessment_end_am_pm}
+End time: ${assessment_end} ${assessment_end_am_pm}
+HUC code: ${huc_code}
+
+<h3>People on the monitoring team</h3>
+Monitoring team: ${monitoring_team}
+Collecting persons: ${persons_collection}
+Team members: ${team_members}
+
+<h3>Macroinvertebrae Collection</h3>
+Collection: ${macroinvertebrae_collection}
+Live clams/crayfish: ${live_clams_crayfish}
+How many clams? ${clam_count}
+How many crayfish? ${crayfish_count}
+Wildlife comments: ${wildlife_comments}
+
+<h3>II. Flow Measurement</h3>
+Average width: ${average_width}
+Average depth: ${average_depth}
+Stream speed: ${average_flow}
+
+<h3>III. Bank Conditions</h3>
+
+<h4>A. Bank Angles</h4>
+<table>
+<tr>
+<td></td>
+<td>Acute%</td>
+<td>Obtuse%</td>
+<td>Right%</td>
+</tr>
+<tr>
+<td>Left</td>
+<td>${left-undercut-bank-angle}</td>
+<td>${left-obtuse-bank-angle}</td>
+<td>${left-right-bank-angle}</td>
+</tr>
+<tr>
+<td>Right</td>
+<td>${right-undercut-bank-angle}</td>
+<td>${right-obtuse-bank-angle}</td>
+<td>${right-right-bank-angle}</td>
+</tr>
+</table>
+
+<h4>B. Bank Stability and Erosion</h4>
+Left: ${stability-erosion-left}
+Right: ${stability-erosion-right}
+
+<h4>C. Riparian Zone</h4>
+<table>
+<tr>
+<td></td>
+<td>Type</td>
+<td>Scale</td>
+</tr>
+<tr>
+<td>Left Bank</td>
+<td>${land-types-left}</td>
+<td>${land-types-left-scale}</td>
+</tr>
+<tr>
+<td>Right Bank</td>
+<td>${land-types-right}</td>
+<td>${land-types-right-scale}</td>
+</tr>
+</table>
+
+<h4>IV. Stream and Riparian Habitat</h4>
+<h5>A. General Information (select all that apply)</h5>
+Monitor event conditions: ${event-conditions}
+Water temperature: ${water_temp}
+Air temperature: ${air_temp}
+Temperature scale: ${temp_scale}
+Channel condition:${channel-condition}
+Channelized? ${channelized}
+Estimate of current stream flow: ${stream-flow}
+Highest water mark: ${highest-water-mark}
+Estimate of turbidity: ${turbidity}
+Visible oil slick? ${oil-slick}
+Oil slick sheen break with stick poke? ${oil-slick-if-yes}
+Foam presence: ${foam}
+Foam texture: ${foam-if-yes}
+Water smell: ${water-smell}
+Has it rained in the past 5 days? ${rained-yes-no}
+Rain estimate (inches): ${rain-inches}
+
+<h5>B. Plant Community</h5>
+Percentage of stream covered by overhanging vegetation: ${overhanging-vegetation-stream-coverage}
+Percentage of stream covered by tree canopy:
+${overhanging-tree-canopy-stream-coverage}
+
+<h5>Estimate the relative abundance of the following types of vegetation present.</h5>
+
+<h4>Plants in Stream</h4>
+Algae abundance on rocks: ${algae-abundance}
+Macrophytes: ${macrophytes_abundance}
+Filamentous Algae: ${filamentous_algae_abundance}
+Other: ${other-plants-in-stream-abundance}
+
+<h4>Plants on Bank and Riparian Zone</h4>
+Shrubs: ${shrubs-abundance}
+Grasses: ${grasses-abundance}
+Trees: ${trees-abundance}
+Other: ${other-plants-on-bank-abundance}
+
+<h4>C. Streambed Substrate</h4>
+
+<table>
+<tr>
+  <th><strong>Substrate type</strong></th>
+  <th><strong>Size</strong></th>
+  <th><strong>Percent of stream bed</strong></th>
+  <th><strong>Percent Embedded</strong></th>
+</tr>
+<tr>
+  <td>Boulder</td>
+  <td>&gt; 10" diameter</td>
+  <td>${stream-bed-percent}</td>
+  <td>${percent-embedded-boulder}</td>
+</tr>
+<tr>
+  <td>Cobble</td>
+  <td>2.5" &mdash; 10" diameter</td>
+  <td>${stream-bed-percent-cobble}</td>
+  <td>${percent-embedded-cobble}</td>
+</tr>
+<tr>
+  <td>Gravel</td>
+  <td>0.1" &mdash; 2.5" diameter</td>
+  <td>${stream-bed-percent-gravel}</td>
+  <td>${percent-embedded-gravel}</td>
+</tr>
+<tr>
+  <td>Sand</td>
+  <td>Coarse grain</td>
+  <td>${stream-bed-percent-sand}</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Fines: Silt / Detritus / Muck</td>
+  <td>Fine grain / organic matter</td>
+  <td>${stream-bed-percent-fines}</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Hardpan / Bedrock</td>
+  <td>Solid clay / rock surface</td>
+  <td>${stream-bed-percent-hardpan}</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Artificial</td>
+  <td>Man-made</td>
+  <td>${stream-bed-percent-artificial}</td>
+  <td></td>
+</tr>
+<tr>
+  <td>${other-substrate-type}</td>
+  <td>${other-substrate-size}</td>
+  <td>${stream-bed-percent-other}</td>
+  <td></td>
+</tr>
+</table>
+
+
+<h3>V. Sources of Degradation</h3>
+
+Severity: S - slight (0% - 25%), M - moderate (26% - 75%), H - high (76% - 100%)
+
+<table>
+  <tbody>
+    <tr>
+      <td>Grazing Related Sources</td>
+      <td>${grazing_sources}</td>
+    </tr>
+    <tr>
+      <td>Intensive Animal Feeding Operations</td>
+      <td>${animal_feeding_operations}</td>
+    </tr>
+    <tr>
+      <td>Crop Related Sources</td>
+      <td>${crop-related-sources}</td>
+    </tr>
+    <tr>
+      <td>Highway / Road / Bridge Maintenance and Runoff</td>
+      <td>${road_maitenance_runoff}</td>
+    </tr>
+    <tr>
+      <td>Channelization</td>
+      <td>${channelization}</td>
+    </tr>
+    <tr>
+      <td>Dredging</td>
+      <td>${dredging}</td>
+    </tr>
+    <tr>
+      <td>Removal of Riparian Vegetation</td>
+      <td>${veg_removal}</td>
+    </tr>
+    <tr>
+      <td>Bank and Shoreline Erosion / Modification / Destruction</td>
+      <td>${bank_shoreline_erosion}</td>
+    </tr>
+    <tr>
+      <td>Flow Regulation / Modification (Hydrology)</td>
+      <td>${flow_regulation}</td>
+    </tr>
+    <tr>
+      <td>Land Fill</td>
+      <td>${land_fill}</td>
+    </tr>
+    <tr>
+      <td>Urban Runoff</td>
+      <td>${urban_runoff}</td>
+    </tr>
+
+    <tr>
+      <td>Impoundment - Dam (natural or man-mad)</td>
+      <td>${impound_dam}</td>
+    </tr>
+
+    <tr>
+      <td>Construction: Highway, Road, Bridge, Culvert</td>
+      <td>${construction_roadwork}</td>
+    </tr>
+
+    <tr>
+      <td>Construction: Land Development</td>
+      <td>${construction_land_dev}</td>
+    </tr>
+
+    <tr>
+      <td>Natural Sources (i.e. log jams)</td>
+      <td>${natural_sources}</td>
+    </tr>
+
+    <tr>
+      <td>Signs of animals using or crossing the stream</td>
+      <td>${animal_use_signs}</td>
+    </tr>
+
+    <tr>
+      <td>On-site Wastewater Systems</td>
+      <td>${wastewater}</td>
+    </tr>
+
+    <tr>
+      <td>Silviculture (Forestry)</td>
+      <td>${silviculture}</td>
+    </tr>
+
+    <tr>
+      <td>Resource Extraction (Mining)</td>
+      <td>${resource_extraction}</td>
+    </tr>
+
+    <tr>
+      <td>Recreational / Tourism Activities (general)</td>
+      <td>${tourism_activities}</td>
+    </tr>
+
+    <tr>
+      <td> - Golf Courses</td>
+      <td>${golf_courses}</td>
+    </tr>
+
+    <tr>
+      <td> - Recreational Boating (water releases)</td>
+      <td>${boating_water_releases}</td>
+    </tr>
+
+    <tr>
+      <td> - Recreational Boating (bank or shoreline erosion)</td>
+      <td>${recreational-boating-bank-erosion use_label_element}</td></tr>
+
+    <tr>
+      <td>Debris in Water</td>
+      <td>${debris-in-water}</td>
+    </tr>
+
+    <tr>
+      <td>Debris in Trees (natural sources)</td>
+      <td>${debris-in-trees-natural-sources}</td>
+    </tr>
+
+    <tr>
+      <td>Trash in trees along bank </td>
+      <td>${trash-in-trees-along-bank}</td>
+    </tr>
+
+    <tr>
+      <td>Industrial Point Source</td>
+      <td>${industrial-point-sources}</td>
+    </tr>
+
+    <tr>
+      <td>Municipal Point Source</td>
+      <td>${municipal-point-sources}</td>
+    </tr>
+
+    <tr>
+      <td>Source(s) Unknown</td>
+      <td>${source-unknown}</td>
+    </tr>
+  </tbody>
+</table>
+
+Trash collection: ${trash_collection}
+Additional comments: ${add_degradation_comments}
+
+<h3>Identification and Assesment</h3>
+<p>Please use the letter codes "R" (rare) for 1 to 10 and "C" (common) for 11 or more.</p>
+
+<h4>Group 1: Sensitive</h4>
+Caddisfly Larvae (Trichoptera): ${caddisfly_count}
+Hellgrammites (Megaloptera): ${hellgrammites_count}
+Mayfly nymphs (Ephemeroptera): ${mayfly_count}
+Gilled (right-handed) snails (Gastropoda): ${gilled_snail_count}
+Stonefly nymphs (Plecoptera): ${stonefly_nymphs_count}
+Water Penny (Coleoptera): ${water_penny_count}
+Water Snipe Fly (Diptera): ${water_snipe_count}
+
+<h4>Group 2: Somewhat Sensitive</h4>
+Alderfly larvae (Megaloptera): ${alderfly_larvae_count}
+Beetle adults (Coleoptera): ${beetle_adults_count}
+Beetle larvae (Coleoptera): ${beetle_larvae_count}
+Black fly larvae (Diptera): ${black_fly_larvae_count}
+Clams (from count) (Pelecypoda): ${final_clams_count}
+Crane fly larvae (Diptera): ${crane_flye_count}
+Crayfish (from count) (Decapoda): ${final_crayfish_count}
+Damselfly nymphs (Odonata): ${damselfly_count}
+Dragonfly nymphs (Odonata): ${dragonfly_count}
+Net-spinning caddisfly larvae (Hydropsychidae and Trichoptera): ${netSpinning_caddisfly_count}
+Scuds (Amphipoda): ${scud_count}
+Sowbugs (Isopoda): ${sowbug_count}
+
+<h4>Group 3: Tolerant</h4>
+Aquatic worms (Oligochaeta): ${aqautic_worms_count}
+Leeches (Hirudinea): ${leeches_count}
+Midge larvae (Diptera): ${midge_count}
+Pouch Snails (Gastropoda): ${pouch_snails_count}
+True bugs (Hemiptera): ${tree_bugs_count}
+Other true flies (Diptera): ${true_flies_count}
+
+<h3>Conclusion</h3>
+Total Stream Quality Score: ${stream_quality_score}
+Total Stream Quality Grade: ${stream_quality_grade}
+Identifications made by: ${ids_made_by}
+Data sheet check for completeness by: ${completeness_check}
+Data entered into MiCorps database by: ${micorps_database_entry}
