@@ -4,7 +4,7 @@ var markerArray = new Array();
 var windowArray = new Array();
 var data;
 
-$.getJSON("http://flintriver.org/blog/api/assessmentSummary.php",function(apiData){
+jQuery.getJSON("http://flintriver.org/blog/api/assessmentSummary.php",function(apiData){
 
    data = apiData;
    console.log(data);
@@ -96,7 +96,7 @@ function initialize() {
     map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
 
-    $.each(data.data, function(index, marker) {
+    jQuery.each(data.data, function(index, marker) {
         addListItem(marker,index);
         marker.lat = ConvertDMSToDD(marker.lat_degrees,marker.lat_minutes,marker.lat_seconds);
         marker.lng = ConvertDMSToDD(marker.lng_degrees,marker.lng_minutes,marker.lng_seconds);
@@ -116,14 +116,13 @@ function initialize() {
         });
         windowArray[index] = infowindow;
         google.maps.event.addListener(newMarker, 'click', function() {
-            //infowindow.open(map, newMarker);
-             $("#site-info-modal").modal("show");
-            $("#site-info-modal").find(".modal-body").html(getWindowHTML(marker));
+            infowindow.open(map, newMarker);
+
         });
     });
 
-    $(".list-group-item").click(function(){
-       var index = $(this).attr("data-index");
+    jQuery(".list-group-item").click(function(){
+       var index = jQuery(this).attr("data-index");
        closeAllWindows();
        map.setCenter(data.data[index].gLatLng);
        windowArray[index].open(map, markerArray[index]);
@@ -132,7 +131,7 @@ function initialize() {
 }
 
 function closeAllWindows(){
-    $.each(windowArray,function(index,infoWindow){
+    jQuery.each(windowArray,function(index,infoWindow){
        infoWindow.close();
     });
 }
@@ -163,7 +162,7 @@ function addListItem(marker,index){
     }
     html += "</div>";
     
-    $(".list-group").append(html);
+    jQuery(".list-group").append(html);
     
 }
 //google.maps.event.addDomListener(window, 'load', initialize);
