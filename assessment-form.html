@@ -56,20 +56,32 @@
 
 <h4>A. Bank Angles</h4>
 
-<h5>Undercut (Acute) %</h5>
-<label>Left Bank</label>[number left-undercut-bank-angle id:left-undercut-bank-angles min:0 max:100]
-
-<label>Right Bank</label>[number right-undercut-bank-angle id:right-undercut-bank-angles min:0 max:100]
-
-<h5>Obtuse %</h5>
-<label>Left Bank</label>[number left-obtuse-bank-angle id:left-obtuse-bank-angles min:0 max:100]
-
-<label>Right Bank</label>[number right-obtuse-bank-angle id:right-obtuse-bank-angles min:0 max:100]
-
-<h5>Right %</h5>
-<label>Left Bank</label>[number left-right-bank-angle id:left-right-bank-angles min:0 max:100]
-
-<label>Right Bank</label>[number right-right-bank-angle id:right-right-bank-angles min:0 max:100]
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Left bank</th>
+      <th>Right bank</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Undercut (acute)</td>
+      <td>[number left-undercut-bank-angle id:left-undercut-bank-angles min:0 max:100]</td>
+      <td>[number right-undercut-bank-angle id:right-undercut-bank-angles min:0 max:100]</td>
+    </tr>
+    <tr>
+      <td>Obtuse percentage</td>
+      <td>[number left-obtuse-bank-angle id:left-obtuse-bank-angles min:0 max:100]</td>
+      <td>[number right-obtuse-bank-angle id:right-obtuse-bank-angles min:0 max:100]</td>
+    </tr>
+    <tr>
+      <td>Right percentage</td>
+      <td>[number left-right-bank-angle id:left-right-bank-angles min:0 max:100]</td>
+      <td>[number right-right-bank-angle id:right-right-bank-angles min:0 max:100]</td>
+    </tr>
+  </tbody>
+</table>
 
 <h4>B. Bank Stability and Erosion</h4>
 <label>Left Bank</label>
@@ -79,17 +91,33 @@
 [radio stability-erosion-right id:stability-erosion-right use_label_element "10" "9" "8" "7" "6" "5" "4" "3" "2" "1"]
 
 <h4>C. Riparian Zone</h4>
-<p><label>Left bank</label>Select all that apply:</p>
-[checkbox land-types-left id:land-types-left use_label_element "Wetlands" "Forest" "Residential Lawn" "Park" "Shrub, Old Field" "Agriculture" "Construction" "Commercial" "Industrial" "Road" "Golf Course" "Highways" "Other"][text land-types-left-other id:land-types-left-other]
 
-<p><label>Right bank</label>Select all that apply:</p>
-[checkbox land-types-right id:land-types-right use_label_element "Wetlands" "Forest" "Residential Lawn" "Park" "Shrub, Old Field" "Agriculture" "Construction" "Commercial" "Industrial" "Road" "Golf Course" "Highways" "Other"][text land-types-left-other id:land-types-left-other]
+<table>
+  <thead>
+    <tr>
+      <th>Left bank</th>
+      <th>Right bank</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="vertical-list">[checkbox land-types-left id:land-types-left "Wetlands" "Forest" "Residential Lawn" "Park" "Shrub, Old Field" "Agriculture" "Construction" "Commercial" "Industrial" "Road" "Golf Course" "Highways" "Other"][text land-types-left-other id:land-types-left-other]
 
-<label>Left Bank</label>
-[radio land-types-left-scale id:land-types-left-scale use_label_element "10" "9" "8" "7" "6" "5" "4" "3" "2" "1"]
+      <hr>
+      <p>Summarize the size and quality of the riparian zone along each bank separately on a scale of 1 through 10.</p>
+      [radio land-types-left-scale id:land-types-left-scale use_label_element "10" "9" "8" "7" "6" "5" "4" "3" "2" "1"]
+      </td>
+      
+      <td class="vertical-list">[checkbox land-types-right id:land-types-right use_label_element "Wetlands" "Forest" "Residential Lawn" "Park" "Shrub, Old Field" "Agriculture" "Construction" "Commercial" "Industrial" "Road" "Golf Course" "Highways" "Other"][text land-types-left-other id:land-types-left-other]
 
-<label>Right Bank</label>
-[radio land-types-right-scale id:land-types-right-scale use_label_element "10" "9" "8" "7" "6" "5" "4" "3" "2" "1"]
+      <hr>
+      <p>Summarize the size and quality of the riparian zone along each bank separately on a scale of 1 through 10.</p>
+      [radio land-types-right-scale id:land-types-right-scale use_label_element "10" "9" "8" "7" "6" "5" "4" "3" "2" "1"]
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 
 <h4>IV. Stream and Riparian Habitat</h4>
 <h5>A. General Information (select all that apply)</h5>
@@ -103,31 +131,34 @@
 <label>Air Temperature (Celsius)</label>
 [number* air_temp id:air-temp step:1]
 
-<label>Channel Condition<label>
+<label>Temperature Scale</label>
+[radio temp_scale use_label_element "Celsius" "Fahrenheit"]
+
+<label>Channel Condition</label>
 [checkbox channel-conditions id:channel-conditions use_label_element "Natural" "Recovering" "Maintained"]
 
-<label>Has this stream been channelized?<label>
+<label>Has this stream been channelized?</label>
 [checkbox channelized id:channelized use_label_element "Yes, currently" "Yes, sometime in the past" "No"]
 
-<label>Estimate of current stream flow<label>
+<label>Estimate of current stream flow</label>
 [checkbox stream-flow id:stream-flow use_label_element "Dry" "Stagnant" "Low" "Medium" "High"]
 
-<label>Highest Water Mark (in feet; above current level)<label>
+<label>Highest Water Mark (in feet; above current level)</label>
 [checkbox highest-water-mark id:highest-water-mark use_label_element "<1" "1-3" "3-5" "5-10" ">10"]
 
-<label>Estimate of turbidity<label>
+<label>Estimate of turbidity</label>
 [checkbox turbidity id:turbidity use_label_element "Clear" "Slightly Turbid" "Turbid"]
 
-<label>Is there a sheen or oil slick visible on the surface?<label>
+<label>Is there a sheen or oil slick visible on the surface?</label>
 [radio oil-slick id:oil-slick use_label_element "Yes" "No"]
 
-<label><strong>If yes</strong>, does the sheen break up when poked with a stick?<label>
+<label><strong>If yes</strong>, does the sheen break up when poked with a stick?</label>
 [radio oil-slick-if-yes id:oil-slick-if-yes use_label_element "Yes (most likely natural)" "No (most likely artificial)"]
 
-<label>Is there foam present on the surface of the water?<label>
+<label>Is there foam present on the surface of the water?</label>
 [radio foam id:foam use_label_element "Yes" "No"]
 
-<label><strong>If yes</strong>, does the foam feel gritty or slippery?<label>
+<label><strong>If yes</strong>, does the foam feel gritty or slippery?</label>
 [radio foam-if-yes id:foam-if-yes use_label_element "Gritty (most likely natural)" "Slippery (most likely artificial)"]
 
 <label>If the water <strong>smells</strong>, please describe</label>
@@ -240,65 +271,91 @@
 
 Severity: S - slight (0% - 25%), M - moderate (26% - 75%), H - high (76% - 100%)
 
-<label>Crop Related Sources[radio crop-related-sources use_label_element "S" "M" "H"]</label>
+<table>
+  <tbody>
+    <tr>
+      <td>Grazing Related Sources</td>
+      <td>[radio grazing_sources use_label_element "S" "M" "H"]</td>
+    </tr>
+    <tr>
+      <td>Intensive Animal Feeding Operations</td>
+      <td>[radio animal_feeding_operations use_label_element "S" "M" "H"]</td>
+    </tr>
+    <tr>
+      <td>Crop Related Sources</td>
+      <td>[radio crop-related-sources use_label_element "S" "M" "H"]</td>
+    </tr>
+    <tr>
+      <td>Highway / Road / Bridge Maintenance and Runoff</td>
+      <td>[radio road_maitenance_runoff use_label_element "S" "M" "H"]</td>
+    </tr>
+    <tr>
+      <td>Channelization</td>
+      <td>[radio  channelization use_label_element "S" "M" "H"]</td>
+    </tr>
+    <tr>
+      <td>Dredging</td>
+      <td>[radio dredging use_label_element "S" "M" "H"]</td>
+    </tr>
+    <tr>
+      <td>Removal of Riparian Vegetation</td>
+      <td>[radio veg_removal use_label_element "S" "M" "H"]</td>
+    </tr>
+    <tr>
+      <td>Bank and Shoreline Erosion / Modification / Destruction</td>
+      <td>[radio bank_shoreline_erosion use_label_element "S" "M" "H"]</td>
+    </tr>
+    <tr>
+      <td>Flow Regulation / Modification (Hydrology)</td>
+      <td>[radio flow_regulation use_label_element "S" "M" "H"]</td>
+    </tr>
+    <tr>
+      <td>Land Fill</td>
+      <td>[radio land_fill use_label_element "S" "M" "H"]</td>
+    </tr>
+    <tr>
+      <td>Urban Runoff</td>
+      <td>[radio urban_runoff use_label_element "S" "M" "H"]</td>
+    </tr>
 
-<label>Grazing Related Sources<label>
-[radio grazing_sources use_label_element "S" "M" "H"]
+    <tr><td>Impoundment - Dam (natural or man-mad)</td><td>[radio impound_dam use_label_element "S" "M" "H"]</td></tr>
 
-<label>Intensive Animal Feeding Operations</label>
-[radio animal_feeding_operations use_label_element "S" "M" "H"]
+    <tr><td>Construction: Highway, Road, Bridge, Culvert</td><td>[radio construction_roadwork use_label_element "S" "M" "H"]</td></tr>
 
-<label>Highway / Road / Bridge Maintenance and Runoff[radio road_maitenance_runoff use_label_element "S" "M" "H"]</label>
+    <tr><td>Construction: Land Development</td><td>[radio construction_land_dev use_label_element "S" "M" "H"]</td></tr>
 
-<label>Channelization[radio  channelization use_label_element "S" "M" "H"]</label>
+    <tr><td>Natural Sources (i.e. log jams)</td><td>[radio natural_sources use_label_element "S" "M" "H"]</td></tr>
 
-<label>Dredging[radio dredging use_label_element "S" "M" "H"]</label>
+    <tr><td>Signs of animals using or crossing the stream</td><td>[radio animal_use_signs use_label_element "S" "M" "H"]</td></tr>
 
-<label>Removal of Riparian Vegetation [radio veg_removal "S" "M" "H"]</label>
+    <tr><td>On-site Wastewater Systems</td><td>[radio wastewater use_label_element "S" "M" "H"]</td></tr>
 
-<label>Bank and Shoreline Erosion / Modification / Destruction[radio bank_shoreline_erosion use_label_element "S" "M" "H"]</label>
+    <tr><td>Silviculture (Forestry)</td><td>[radio silviculture use_label_element "S" "M" "H"]</td></tr>
 
-<label>Flow Regulation / Modification (Hydrology)[radio flow_regulation use_label_element "S" "M" "H"]</label>
+    <tr><td>Resource Extraction (Mining)</td><td>[radio resource_extraction use_label_element "S" "M" "H"]</td></tr>
 
-<label>Land Fill[radio land_fill use_label_element "S" "M" "H"]</label>
+    <tr><td>Recreational / Tourism Activities (general)</td><td>[radio tourism_activities use_label_element "S" "M" "H"]</td></tr>
 
-<label>Urban Runoff[radio urban_runoff use_label_element "S" "M" "H"]</label>
+    <tr><td> - Golf Courses</td><td>[radio golf_courses use_label_element "S" "M" "H"]</td></tr>
 
-<label>Impoundment - Dam (natural or man-mad)[radio impound_dam use_label_element "S" "M" "H"]</label>
+    <tr><td> - Recreational Boating (water releases)</td><td>[radio boating_water_releases use_label_element "S" "M" "H"]</td></tr>
 
-<label>Construction: Highway, Road, Bridge, Culvert[radio construction_roadwork use_label_element "S" "M" "H"]</label>
+    <tr><td> - Recreational Boating (bank or shoreline erosion)</td><td>[radio recreational-boating-bank-erosion use_label_element "S" "M" "H"]</td></tr>
 
-<label>Construction: Land Development[radio construction_land_dev use_label_element "S" "M" "H"]</label>
+    <tr><td>Debris in Water</td><td>[radio debris-in-water use_label_element "S" "M" "H"]</td></tr>
 
-<label>Natural Sources (i.e. log jams)[radio natural_sources use_label_element "S" "M" "H"]</label>
+    <tr><td>Debris in Trees (natural sources)</td><td>[radio debris-in-trees-natural-sources use_label_element "S" "M" "H"]</td></tr>
 
-<label>Signs of animals using or crossing the stream[radio animal_use_signs use_label_element "S" "M" "H"]</label>
+    <tr><td>Trash in trees along bank </td><td>[radio trash-in-trees-along-bank use_label_element "S" "M" "H"]</td></tr>
 
-<label>On-site Wastewater Systems[radio wastewater use_label_element "S" "M" "H"]</label>
+    <tr><td>Industrial Point Source</td><td>[radio industrial-point-sources use_label_element "S" "M" "H"]</td></tr>
 
-<label>Silviculture (Forestry)[radio silviculture use_label_element "S" "M" "H"]</label>
+    <tr><td>Municipal Point Source</td><td>[radio municipal-point-sources use_label_element "S" "M" "H"]</td></tr>
 
-<label>Resource Extraction (Mining)[radio resource_extraction use_label_element "S" "M" "H"]</label>
+    <tr><td>Source(s) Unknown</td><td>[radio source-unknown use_label_element "S" "M" "H"]</td></tr>
+  </tbody>
+</table>
 
-<label>Recreational / Tourism Activities (general)[radio tourism_activities use_label_element "S" "M" "H"]</label>
-
-<label> - Golf Courses[radio golf_courses use_label_element "S" "M" "H"]</label>
-
-<label> - Recreational Boating (water releases)[radio boating_water_releases use_label_element "S" "M" "H"]</label>
-
-<label> - Recreational Boating (bank or shoreline erosion)[radio recreational-boating-bank-erosion use_label_element "S" "M" "H"]</label>
-
-<label>Debris in Water[radio debris-in-water use_label_element "S" "M" "H"]</label>
-
-<label>Debris in Trees (natural sources)[radio debris-in-trees-natural-sources use_label_element "S" "M" "H"]</label>
-
-<label>Trash in trees along bank [radio trash-in-trees-along-bank use_label_element "S" "M" "H"]</label>
-
-<label>Industrial Point Source[radio industrial-point-sources use_label_element "S" "M" "H"]</label>
-
-<label>Municipal Point Source[radio municipal-point-sources use_label_element "S" "M" "H"]</label>
-
-<label>Source(s) Unknown[radio source-unknown use_label_element "S" "M" "H"]</label>
 
 <label>Does a team need to come out and collect trash? [radio trash_collection use_label_element "Yes" "No"]
 
