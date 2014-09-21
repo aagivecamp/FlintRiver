@@ -4,10 +4,12 @@ var markerArray = new Array();
 var windowArray = new Array();
 var data;
 
+//Get the data from the api
 $.getJSON("http://flintriver.org/blog/api/assessmentSummary.php",function(apiData){
-
+   //When we have data, we can start working
    data = apiData;
-   console.log(data);
+   
+//Try to get geolcoation for distance calulation
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
         geo.lat = position.coords.latitude;
@@ -16,7 +18,7 @@ if (navigator.geolocation) {
         initialize();
         
     }, function(positionError) {
-           console.log("Denied");
+    
     geo.lat = 0;
     geo.lng = 0;
      initialize();
@@ -88,14 +90,15 @@ if (navigator.geolocation) {
 
 
 function initialize() {
-
+    //Set up google map
     var mapOptions = {
         zoom: 9,
         center: new google.maps.LatLng(43.07, -83.56)
     };
     map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
-
+    
+    //Loop through site data and make markers out of them
     $.each(data.data, function(index, marker) {
         addListItem(marker,index);
         marker.lat = ConvertDMSToDD(marker.lat_degrees,marker.lat_minutes,marker.lat_seconds);
@@ -121,7 +124,8 @@ function initialize() {
             $("#site-info-modal").find(".modal-body").html(getWindowHTML(marker));
         });
     });
-
+     
+    //When we click on a list-group-item we want something to happen
     $(".list-group-item").click(function(){
        var index = $(this).attr("data-index");
        closeAllWindows();
@@ -132,12 +136,14 @@ function initialize() {
 }
 
 function closeAllWindows(){
+    //Close all info windows
     $.each(windowArray,function(index,infoWindow){
        infoWindow.close();
     });
 }
 
 function addListItem(marker,index){
+    //Create a list item
      var html = "";
     html += '<div  class="list-group-item" data-index="'+index+'">';
     html += "<h3>" + marker.site_name + "</h3>";
@@ -160,6 +166,8 @@ function addListItem(marker,index){
     html += "   </tr>";
     html += "</tbody>";
     html += "</table>";
+    }else{
+     html +=    '<i>No recent assessments</i>';
     }
     html += "</div>";
     
@@ -196,6 +204,7 @@ Number.prototype.toRad = function() {
 }
 
 function ConvertDMSToDD(degrees, minutes, seconds) {
+    //Converts Degrees Minutes Seconds to decimal
     degrees = parseFloat(degrees);
     var negative = false;
     if(degrees  < 0){
@@ -217,6 +226,7 @@ function ConvertDMSToDD(degrees, minutes, seconds) {
 }
 
 function getWindowHTML(marker){
+    //Generate info window html
     var ret = "";
     ret += "<div class='infoWindow'>";
     ret += "<h4>" + marker.site_name + "</h4>";
@@ -242,6 +252,8 @@ function getWindowHTML(marker){
     ret += "    <td><a href="+assesmentLink+">Full Assessment</a></td>";
     ret += "   </tr>";
     });
+    }else{
+     ret +=   "<tr><td colspan='4'><i>No recent assessments</i></td></tr>";
     }
     ret += "</tbody>";
     ret += "</table>";

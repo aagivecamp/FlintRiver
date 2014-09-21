@@ -4,6 +4,8 @@ var markerArray = new Array();
 var windowArray = new Array();
 var data;
 
+//The template uses an old Jquery and does not like $ so you need to use jQuery
+
 jQuery.getJSON("http://flintriver.org/blog/api/assessmentSummary.php",function(apiData){
 
    data = apiData;
@@ -117,7 +119,7 @@ function initialize() {
         windowArray[index] = infowindow;
         google.maps.event.addListener(newMarker, 'click', function() {
             infowindow.open(map, newMarker);
-
+            closeAllWindows();
         });
     });
 
@@ -159,6 +161,8 @@ function addListItem(marker,index){
     html += "   </tr>";
     html += "</tbody>";
     html += "</table>";
+    }else{
+     html +=    '<i>No recent assessments</i>';
     }
     html += "</div>";
     
@@ -241,6 +245,8 @@ function getWindowHTML(marker){
     ret += "    <td><a href="+assesmentLink+">Full Assessment</a></td>";
     ret += "   </tr>";
     });
+    }else{
+     ret +=   "<tr><td colspan='4'><i>No recent assessments</i></td></tr>";
     }
     ret += "</tbody>";
     ret += "</table>";
