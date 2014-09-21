@@ -130,7 +130,30 @@ function closeAllWindows(){
 }
 
 function addListItem(marker,index){
-    $(".list-group").append('<a href="#" class="list-group-item" data-index="'+index+'">'+marker.site_name+'</a>');
+     var html = "";
+    html += '<a href="#" class="list-group-item" data-index="'+index+'">';
+    html += "<h3>" + marker.site_name + "</h3>";
+    html += "<br>";
+    html += "<label>Last Assessment</label>";
+    html += "<table class='table table-striped table-bordered'>";
+    html +=  "<thead>";
+    html += "<tr>";
+    html += "   <th>Date</th>";
+    html += "   <th>Score</th>";
+    html += "    <th>Grade</th>";
+    html += "   </tr>";
+    html += "</thead>";
+    html += "<tbody>";
+    html += "<tr>";
+    html += "   <th>"+marker.assessments[0].assessment_date+"</th>";
+    html += "   <th>"+marker.assessments[0].stream_quality_score+"</th>";
+    html += "    <th>"+marker.assessments[0].stream_quality_grade+"</th>";
+    html += "   </tr>";
+    html += "</tbody>";
+    html += "</table>";
+    html += "</a>";
+    
+    $(".list-group").append(html);
     
 }
 //google.maps.event.addDomListener(window, 'load', initialize);
